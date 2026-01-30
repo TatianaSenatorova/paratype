@@ -12,7 +12,7 @@ const htmlInputs = fg.sync('src/**/*.html').reduce((entries, file) => {
 export default defineConfig({
   root: 'src',
   publicDir: '../public',
-  base: './',
+  base: '/paratype/',
 
   server: {
     watch: {
@@ -29,3 +29,4 @@ export default defineConfig({
     },
   },
 });
+
