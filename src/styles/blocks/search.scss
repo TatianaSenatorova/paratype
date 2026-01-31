@@ -1,0 +1,14 @@
+@use '../global' as *;
+
+.search {
+  @include header-icon-item;
+  @include header-icon-states;
+
+  @include vp-1024 {
+    padding: 10px 30px 10px 36px;
+  }
+
+  &__svg {
+    @include header-icon-svg;
+  }
+}

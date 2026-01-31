@@ -16,8 +16,128 @@
   </head>
   <body class="page__body">
     <header class="header">
-      <div class="container"></div>
+      <div class="container container--fluid">
+        <div class="header__top">
+          <a class="header__offer" href="#">
+            <span class="header__offer-text header__offer-text--accent">25% Sale</span>
+            осенняя распродажа шрифтов
+          </a>
+        </div>
+        <div class="header__bar">
+          <div class="header__logo logo">
+            <a class="logo__image" href="#">
+              <picture>
+                <source
+                  media="(min-width: 768px)"
+                  srcset="images/logo-tablet.svg"
+                  type="image/svg+xml"
+                  width="230"
+                  height="60" />
+                <img src="images/logo-mobile.svg" width="40" height="33" alt="Логотип дизайн-студии Paratype." />
+              </picture>
+            </a>
+            <p class="logo__text">Основано в&nbsp;1998</p>
+          </div>
+          <nav class="menu" aria-label="Навигация сайта">
+            <button class="burger" type="button" aria-controls="header-menu" aria-expanded="false">
+              <span class="visually-hidden">Открыть меню</span>
+              <span class="burger__icon" aria-hidden="true"></span>
+            </button>
+            <ul class="menu__primary">
+              <li>
+                <a class="menu__link is-current" href="#">Главная</a>
+              </li>
+              <li>
+                <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
+              </li>
+              <li>
+                <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
+              </li>
+              <li><a class="menu__link" href="#">Компания</a></li>
+              <li><a class="menu__link" href="#">Справочник</a></li>
+            </ul>
+            <section class="menu__profile mobile-only">
+              <h2 class="menu__title">Мой профиль</h2>
+              <ul class="menu__auth">
+                <li><a class="menu__link" href="#">Войти</a></li>
+                <li><a class="menu__link" href="#">Зарегистрироваться</a></li>
+              </ul>
+            </section>
+            <ul class="menu__secondary mobile-only">
+              <li><a class="menu__link" href="#">FAQ</a></li>
+              <li><a class="menu__link" href="#">Лицензии</a></li>
+              <li><a class="menu__link" href="#">Правила продажи</a></li>
+              <li><a class="menu__link" href="#">Возврат и замена</a></li>
+              <li><a class="menu__link" href="#">Контакты</a></li>
+            </ul>
+            <footer class="menu__footer mobile-only">
+              <ul class="menu__social">
+                <li>
+                  <a href="https://t.me/paratype_fonts">
+                    <span class="visually-hidden">Telegram</span>
+                  </a>
+                </li>
+                <li>
+                  <a href="https://vk.com/paratypefoundry">
+                    <span class="visually-hidden">ВКонтакте</span>
+                  </a>
+                </li>
+              </ul>
+              <div class="menu__copyright">
+                <p>
+                  © 1998–2022. Паратайп.<br />
+                  Все&nbsp;авторские права защищены.
+                </p>
+                <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
+              </div>
+            </footer>
+          </nav>
+          <div class="header__controls">
+            <a class="search" href="#">
+              <svg class="search__svg" width="20" height="20" aria-hidden="true" focusable="false">
+                <use href="/images/sprite/stack.svg#search"></use>
+              </svg>
+              <span class="visually-hidden">Поиск</span>
+            </a>
+            <ul class="user-menu">
+              <li>
+                <a href="#" class="user-menu__link">
+                  <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
+                    <use href="/images/sprite/stack.svg#heart"></use>
+                  </svg>
+                  <span class="visually-hidden">Избранное</span>
+                  <span class="user-menu__count">0</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="user-menu__link">
+                        <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
+                <use href="/images/sprite/stack.svg#basket"></use>
+              </svg>
+                  <span class="visually-hidden">Корзина</span>
+                  <span class="user-menu__count">0</span>
+                </a>
+              </li>
+              <li>
+                <a href="#" class="user-menu__link">
+                              <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
+                <use href="/images/sprite/stack.svg#account"></use>
+              </svg>
+                  <span class="user-menu__text">Мой аккаунт</span>
+                </a>
+              </li>
+            </ul>
+            <div class="theme">
+              <button class="theme__toggle" type="button" aria-pressed="false" aria-label="Переключить тему">
+                <span class="theme__label theme__label--light">Дневная</span>
+                <span class="theme__label theme__label--dark">Ночная</span>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </header>
+
     <main class="main-content">
       <section>
         <div class="container"></div>

@@ -1,0 +1,64 @@
+@use '../global' as *;
+
+.logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-sizing: border-box;
+  padding: 11px 9px 16px 10px;
+
+  @include fluid(height, 49, 120);
+
+  &__text {
+    display: none;
+  }
+
+  &__image {
+    display: block;
+    height: 100%;
+    max-height: 60px;
+    transition: opacity 0.3s;
+
+    @media (hover: hover) and (pointer: fine) {
+      outline: none;
+      opacity: 0.5;
+    }
+
+    &:focus-visible {
+      opacity: 0.5;
+    }
+
+    &:active {
+      opacity: 0.3;
+    }
+  }
+
+  &__image img {
+    display: block;
+    max-width: 100%;
+    width: auto;
+    height: 100%;
+    margin: auto;
+  }
+
+  @include vp-768 {
+    padding: 11px 24px 16px;
+  }
+
+  @include vp-1024 {
+    padding: 15px 20px 17px 30px;
+  }
+
+  @include vp-1280 {
+    gap: 42px;
+
+    &__text {
+      display: block;
+      margin: 0;
+      align-self: flex-start;
+      font-weight: 500;
+      font-size: 12px;
+      letter-spacing: 0.01em;
+    }
+  }
+}

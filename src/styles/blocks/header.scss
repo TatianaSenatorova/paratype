@@ -1,2 +1,75 @@
 @use '../global' as *;
 
+.header {
+  position: relative;
+  z-index: $z-index-third;
+
+  &__offer {
+    display: inline-block;
+    padding: 12px 10px 8px;
+    font-weight: 600;
+    font-size: 12px;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: inherit;
+    transition:
+      color $trans-default,
+      opacity $trans-default;
+    -webkit-tap-highlight-color: transparent;
+
+    @media (hover: hover) and (pointer: fine) {
+      color: $color-sunset-oranget;
+    }
+
+    &:focus-visible {
+      color: $color-sunset-oranget;
+      outline: none;
+    }
+
+    &:active {
+      opacity: 0.7;
+    }
+  }
+
+  &__offer-text--accent {
+    margin-right: 11px;
+    color: $color-sunset-oranget;
+  }
+
+  &__logo {
+    width: 73px;
+    height: 49px;
+  }
+
+  &__bar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid $color-whisper;
+    border-bottom: 1px solid $color-whisper;
+  }
+
+  &__controls {
+    display: flex;
+    align-items: center;
+    margin-left: auto;
+  }
+
+  @include vp-1024 {
+    &__top {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      min-height: 60px;
+      padding: 0 10px;
+    }
+
+    &__offer {
+      padding: 12px 20px 8px;
+    }
+
+    &__offer-text--accent {
+      margin-right: 21px;
+    }
+  }
+}
