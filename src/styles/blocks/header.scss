@@ -40,11 +40,6 @@
     color: $color-sunset-oranget;
   }
 
-  &__logo {
-    width: 73px;
-    height: 49px;
-  }
-
   &__bar {
     display: flex;
     align-items: center;
@@ -59,8 +54,44 @@
     margin-left: auto;
   }
 
+  &__burger,
+  &__search {
+    @include header-control-size;
+  }
+
+  &__dropdown {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: calc(100vh - var(--header-height));
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto;
+    background-color: $color-white;
+    transform-origin: top;
+    transform: scaleY(0);
+    opacity: 0;
+    transition:
+      transform $trans-default,
+      opacity $trans-default;
+    z-index: $z-index-third;
+
+    &.is-opened {
+      transform: scaleY(1);
+      opacity: 1;
+    }
+  }
+
   @include vp-1024 {
     min-height: 120px;
+
+    &__dropdown {
+      position: static;
+      transform: none;
+      opacity: 1;
+      display: contents;
+    }
 
     &__top {
       display: grid;

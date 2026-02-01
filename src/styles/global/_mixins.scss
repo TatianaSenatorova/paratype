@@ -71,35 +71,29 @@
 }
 
 @mixin header-icon-item {
-  display: grid;
-  place-items: center;
-  min-width: 49px;
-  min-height: 49px;
   background-color: $color-white;
   color: $color-nero;
   text-decoration: none;
   cursor: pointer;
   border-left: 1px solid $color-whisper;
+  display: grid;
+  place-items: center;
   transition:
     background-color $trans-default,
     opacity $trans-default,
     color $trans-default;
-
   @include tap-reset;
+}
 
-  @include vp-768 {
-    min-width: 100px;
-    min-height: 100px;
-  }
+@mixin header-control-size($min: 49, $max: 118, $minVp: 320, $maxVp: 768) {
+  flex-shrink: 0;
 
-  @include vp-1024 {
-    min-width: unset;
-    min-height: 60px;
-    padding: 10px 20px;
-    grid-template-columns: 24px 1fr;
-    place-items: center start;
-    gap: 15px;
-  }
+  @include fluid(width, $min, $max, $minVp, $maxVp);
+  @include fluid(min-height, $min, $max, $minVp, $maxVp);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 @mixin header-icon-svg {

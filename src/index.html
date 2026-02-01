@@ -38,88 +38,17 @@
             </a>
             <p class="logo__text">Основано в&nbsp;1998</p>
           </div>
-          <nav class="menu" aria-label="Навигация сайта">
-            <button class="burger" type="button" aria-controls="header-menu" aria-expanded="false">
+          <div class="header__controls">
+            <button class="header__burger burger" type="button" aria-controls="header-menu" aria-expanded="false">
               <span class="visually-hidden">Открыть меню</span>
               <span class="burger__icon" aria-hidden="true"></span>
             </button>
-            <div class="theme">
-              <button class="theme__toggle" type="button" aria-pressed="false" aria-label="Переключить тему">
-                <span class="theme__label theme__label--light">
-                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                    <use href="/images/sprite/stack.svg#sun"></use>
-                  </svg>
-                  <span class="theme__text">Дневная</span>
-                </span>
-
-                <span class="theme__label theme__label--dark">
-                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                    <use href="/images/sprite/stack.svg#moon"></use>
-                  </svg>
-                  <span class="theme__text">Ночная</span>
-                </span>
-              </button>
-            </div>
-
-            <div class="menu__wrapper">
-              <ul class="menu__primary">
-                <li class="menu__item">
-                  <a class="menu__link is-current" href="#">Главная</a>
-                </li>
-                <li class="menu__item">
-                  <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
-                </li>
-                <li class="menu__item">
-                  <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
-                </li>
-                <li class="menu__item"><a class="menu__link" href="#">Компания</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Справочник</a></li>
-              </ul>
-              <div class="menu__profile mobile-only">
-                <h2 class="menu__title">Мой профиль</h2>
-                <ul class="menu__auth">
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Войти</a></li>
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Зарегистрироваться</a></li>
-                </ul>
-              </div>
-              <ul class="menu__secondary mobile-only">
-                <li class="menu__item"><a class="menu__link menu__link--small" href="#">FAQ</a></li>
-                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Лицензии</a></li>
-                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Правила продажи</a></li>
-                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Возврат и замена</a></li>
-                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Контакты</a></li>
-              </ul>
-              <footer class="menu__footer mobile-only">
-                <ul class="menu__social">
-                  <li>
-                    <a href="https://t.me/paratype_fonts">
-                      <span class="visually-hidden">Telegram</span>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="https://vk.com/paratypefoundry">
-                      <span class="visually-hidden">ВКонтакте</span>
-                    </a>
-                  </li>
-                </ul>
-                <div class="menu__copyright">
-                  <p>
-                    © 1998–2022. Паратайп.<br />
-                    Все&nbsp;авторские права защищены.
-                  </p>
-                  <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
-                </div>
-              </footer>
-            </div>
-          </nav>
-          <div class="header__controls">
-            <a class="search" href="#">
+            <a class="header__search search" href="#">
               <svg class="search__svg" width="20" height="20" aria-hidden="true" focusable="false">
                 <use href="/images/sprite/stack.svg#search"></use>
               </svg>
               <span class="visually-hidden">Поиск</span>
             </a>
-
             <ul class="user-menu">
               <li>
                 <a href="#" class="user-menu__link">
@@ -149,10 +78,80 @@
               </li>
             </ul>
           </div>
+          <div class="header__dropdown">
+            <nav class="menu" id="header-menu" aria-label="Навигация сайта">
+              <div class="menu__wrapper">
+                <ul class="menu__primary">
+                  <li class="menu__item">
+                    <a class="menu__link menu__link--current" href="#">Главная</a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
+                  </li>
+                  <li class="menu__item">
+                    <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
+                  </li>
+                  <li class="menu__item"><a class="menu__link" href="#">Компания</a></li>
+                  <li class="menu__item"><a class="menu__link" href="#">Справочник</a></li>
+                </ul>
+
+                <div class="menu__profile mobile-only">
+                  <h2 class="menu__title">Мой профиль</h2>
+                  <ul class="menu__auth">
+                    <li class="menu__item"><a class="menu__link menu__link--small" href="#">Войти</a></li>
+                    <li class="menu__item"><a class="menu__link menu__link--small" href="#">Зарегистрироваться</a></li>
+                  </ul>
+                </div>
+                <ul class="menu__secondary mobile-only">
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">FAQ</a></li>
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Лицензии</a></li>
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Правила продажи</a></li>
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Возврат и замена</a></li>
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Контакты</a></li>
+                </ul>
+                <footer class="menu__footer mobile-only">
+                  <ul class="menu__social">
+                    <li>
+                      <a href="https://t.me/paratype_fonts">
+                        <span class="visually-hidden">Telegram</span>
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://vk.com/paratypefoundry">
+                        <span class="visually-hidden">ВКонтакте</span>
+                      </a>
+                    </li>
+                  </ul>
+                  <div class="menu__copyright">
+                    <p>
+                      © 1998–2022. Паратайп.<br />
+                      Все&nbsp;авторские права защищены.
+                    </p>
+                    <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
+                  </div>
+                </footer>
+              </div>
+            </nav>
+            <div class="header__theme theme">
+              <button class="theme__toggle" type="button" aria-pressed="false" aria-label="Переключить тему">
+                <span class="theme__label theme__label--light">
+                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                    <use href="/images/sprite/stack.svg#sun"></use>
+                  </svg>
+                  <span class="theme__text">Дневная</span>
+                </span>
+                <span class="theme__label theme__label--dark">
+                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                    <use href="/images/sprite/stack.svg#moon"></use>
+                  </svg>
+                  <span class="theme__text">Ночная</span>
+                </span>
+              </button>
+            </div>
+          </div>
         </div>
       </div>
     </header>
-
     <main class="main-content">
       <section>
         <div class="container"></div>

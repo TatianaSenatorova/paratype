@@ -14,8 +14,8 @@
   &__image {
     display: block;
 
-    @include fluid(width, 40, 79, $mobile-size, $tablet-size);
-    @include fluid(height, 33, 65, $mobile-size, $tablet-size);
+    @include fluid(width, 40, 79, 390, 768);
+    @include fluid(height, 33, 65, 390, 768);
 
     transition: opacity 0.3s;
 
@@ -35,10 +35,8 @@
 
   &__image img {
     display: block;
-    max-width: 100%;
-    width: auto;
+    width: 100%;
     height: 100%;
-    margin: auto;
   }
 
   @include vp-768 {

@@ -7,6 +7,7 @@
   list-style: none;
 
   &__link {
+    @include header-control-size;
     @include header-icon-item;
     @include header-icon-states;
 
@@ -15,6 +16,10 @@
 
   &__svg {
     @include header-icon-svg;
+  }
+
+  &__count {
+    @include visually-hidden;
   }
 
   &__text {
@@ -29,6 +34,10 @@
 
       font-size: 12px;
       text-transform: uppercase;
+    }
+
+    &__count {
+      @include visually-shown;
     }
   }
 }
