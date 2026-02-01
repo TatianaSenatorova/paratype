@@ -1,0 +1,34 @@
+@use '../global' as *;
+
+.user-menu {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+
+  &__link {
+    @include header-icon-item;
+    @include header-icon-states;
+
+    position: relative;
+  }
+
+  &__svg {
+    @include header-icon-svg;
+  }
+
+  &__text {
+    @include visually-hidden;
+  }
+
+  @include vp-1024 {
+    justify-content: flex-end;
+
+    &__text {
+      @include visually-shown;
+
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+  }
+}

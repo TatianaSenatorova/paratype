@@ -4,6 +4,10 @@
   position: relative;
   z-index: $z-index-third;
 
+  &__top {
+    min-height: 40px;
+  }
+
   &__offer {
     display: inline-block;
     padding: 12px 10px 8px;
@@ -17,7 +21,7 @@
       opacity $trans-default;
     -webkit-tap-highlight-color: transparent;
 
-    @media (hover: hover) and (pointer: fine) {
+    &:hover {
       color: $color-sunset-oranget;
     }
 
@@ -56,6 +60,8 @@
   }
 
   @include vp-1024 {
+    min-height: 120px;
+
     &__top {
       display: grid;
       grid-template-columns: repeat(2, 1fr);
@@ -70,6 +76,16 @@
 
     &__offer-text--accent {
       margin-right: 21px;
+    }
+
+    &__bar {
+      align-items: stretch;
+    }
+
+    &__controls {
+      margin-left: auto;
+      display: flex;
+      align-items: center;
     }
   }
 }

@@ -48,7 +48,17 @@
   overflow: hidden;
 }
 
-@mixin fluid($property, $minSize, $maxSize, $minVp: 360, $maxVp: 1440) {
+@mixin visually-shown {
+  position: static;
+  width: auto;
+  height: auto;
+  margin: 0;
+  clip-path: none;
+  overflow: visible;
+  white-space: normal;
+}
+
+@mixin fluid($property, $minSize, $maxSize, $minVp: 390, $maxVp: 1600) {
   #{$property}: clamp(
     #{$minSize}px,
     calc(#{$minSize}px + (#{$maxSize} - #{$minSize}) * ((100vw - #{$minVp}px) / (#{$maxVp} - #{$minVp}))),
@@ -87,8 +97,7 @@
     min-height: 60px;
     padding: 10px 20px;
     grid-template-columns: 24px 1fr;
-    align-items: center;
-    justify-items: start;
+    place-items: center start;
     gap: 15px;
   }
 }
@@ -96,9 +105,7 @@
 @mixin header-icon-svg {
   width: 20px;
   height: 20px;
-  fill: currentColor;
   flex-shrink: 0;
-  transition: color $trans-default;
 
   @include vp-768 {
     width: 40px;
@@ -121,24 +128,22 @@
   }
 
   &:focus-visible {
-    background-color: $color-sunset-oranget;
+    color: $color-sunset-oranget;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
-      background-color: $color-sunset-oranget;
+      color: $color-sunset-oranget;
     }
   }
 
   @include vp-1024 {
     &:focus-visible {
-      background-color: $color-white;
       color: $color-sunset-oranget;
     }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        background-color: $color-white;
         color: $color-sunset-oranget;
       }
     }
