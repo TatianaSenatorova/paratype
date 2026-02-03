@@ -15,7 +15,7 @@
     <link rel="preload" href="fonts/pragmatica-next_vf.woff2" type="font/woff2" as="font" crossorigin="anonymous" />
   </head>
   <body class="page__body">
-    <header class="header">
+    <header class="header" data-header>
       <div class="container container--fluid">
         <div class="header__top">
           <a class="header__offer" href="#">
@@ -39,7 +39,12 @@
             <p class="logo__text">Основано в&nbsp;1998</p>
           </div>
           <div class="header__controls">
-            <button class="header__burger burger" type="button" aria-controls="header-menu" aria-expanded="false">
+            <button
+              class="header__burger burger"
+              type="button"
+              aria-controls="header-menu"
+              data-burger
+              aria-expanded="false">
               <span class="visually-hidden">Открыть меню</span>
               <span class="burger__icon" aria-hidden="true"></span>
             </button>
@@ -49,7 +54,7 @@
               </svg>
               <span class="visually-hidden">Поиск</span>
             </a>
-            <ul class="user-menu">
+            <ul class="header__user-menu user-menu" data-user-menu>
               <li>
                 <a href="#" class="user-menu__link">
                   <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
@@ -78,88 +83,180 @@
               </li>
             </ul>
           </div>
-          <div class="header__dropdown">
-            <nav class="menu" id="header-menu" aria-label="Навигация сайта">
-              <div class="menu__wrapper">
-                <ul class="menu__primary">
-                  <li class="menu__item">
-                    <a class="menu__link menu__link--current" href="#">Главная</a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
-                  </li>
-                  <li class="menu__item">
-                    <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
-                  </li>
-                  <li class="menu__item"><a class="menu__link" href="#">Компания</a></li>
-                  <li class="menu__item"><a class="menu__link" href="#">Справочник</a></li>
-                </ul>
-
-                <div class="menu__profile mobile-only">
-                  <h2 class="menu__title">Мой профиль</h2>
-                  <ul class="menu__auth">
-                    <li class="menu__item"><a class="menu__link menu__link--small" href="#">Войти</a></li>
-                    <li class="menu__item"><a class="menu__link menu__link--small" href="#">Зарегистрироваться</a></li>
-                  </ul>
-                </div>
-                <ul class="menu__secondary mobile-only">
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">FAQ</a></li>
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Лицензии</a></li>
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Правила продажи</a></li>
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Возврат и замена</a></li>
-                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Контакты</a></li>
-                </ul>
-                <footer class="menu__footer mobile-only">
-                  <ul class="menu__social">
-                    <li>
-                      <a href="https://t.me/paratype_fonts">
-                        <span class="visually-hidden">Telegram</span>
-                      </a>
-                    </li>
-                    <li>
-                      <a href="https://vk.com/paratypefoundry">
-                        <span class="visually-hidden">ВКонтакте</span>
-                      </a>
-                    </li>
-                  </ul>
-                  <div class="menu__copyright">
-                    <p>
-                      © 1998–2022. Паратайп.<br />
-                      Все&nbsp;авторские права защищены.
-                    </p>
-                    <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
-                  </div>
-                </footer>
-              </div>
-            </nav>
-            <div class="header__theme theme">
-              <button class="theme__toggle" type="button" aria-pressed="false" aria-label="Переключить тему">
-                <span class="theme__label theme__label--light">
-                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                    <use href="/images/sprite/stack.svg#sun"></use>
-                  </svg>
-                  <span class="theme__text">Дневная</span>
-                </span>
-                <span class="theme__label theme__label--dark">
-                  <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
-                    <use href="/images/sprite/stack.svg#moon"></use>
-                  </svg>
-                  <span class="theme__text">Ночная</span>
-                </span>
-              </button>
-            </div>
+        </div>
+        <div class="header__dropdown" data-menu>
+          <div class="header__theme theme" data-theme>
+            <button class="theme__toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Переключить тему">
+              <span class="theme__label theme__label--light">
+                <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="/images/sprite/stack.svg#sun"></use>
+                </svg>
+                <span class="theme__text">Дневная тема</span>
+              </span>
+              <span class="theme__label theme__label--dark">
+                <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
+                  <use href="/images/sprite/stack.svg#moon"></use>
+                </svg>
+                <span class="theme__text">Ночная тема</span>
+              </span>
+            </button>
           </div>
+          <nav class="menu" id="header-menu" aria-label="Навигация сайта">
+            <div class="menu__wrapper">
+              <ul class="menu__primary">
+                <li class="menu__item">
+                  <a class="menu__link menu__link--current" href="#">Главная</a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
+                </li>
+                <li class="menu__item">
+                  <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
+                </li>
+                <li class="menu__item"><a class="menu__link" href="#">Компания</a></li>
+                <li class="menu__item"><a class="menu__link" href="#">Справочник</a></li>
+              </ul>
+
+              <div class="menu__profile mobile-only">
+                <h2 class="menu__title">Мой профиль</h2>
+                <ul class="menu__auth">
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Войти</a></li>
+                  <li class="menu__item"><a class="menu__link menu__link--small" href="#">Зарегистрироваться</a></li>
+                </ul>
+              </div>
+              <ul class="menu__secondary mobile-only">
+                <li class="menu__item"><a class="menu__link menu__link--small" href="#">FAQ</a></li>
+                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Лицензии</a></li>
+                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Правила продажи</a></li>
+                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Возврат и замена</a></li>
+                <li class="menu__item"><a class="menu__link menu__link--small" href="#">Контакты</a></li>
+              </ul>
+              <footer class="menu__footer mobile-only">
+                <ul class="menu__social">
+                  <li>
+                    <a href="https://t.me/paratype_fonts">
+                      <span class="visually-hidden">Telegram</span>
+                    </a>
+                  </li>
+                  <li>
+                    <a href="https://vk.com/paratypefoundry">
+                      <span class="visually-hidden">ВКонтакте</span>
+                    </a>
+                  </li>
+                </ul>
+                <div class="menu__copyright">
+                  <p>
+                    © 1998–2022. Паратайп.<br />
+                    Все&nbsp;авторские права защищены.
+                  </p>
+                  <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
+                </div>
+              </footer>
+            </div>
+          </nav>
         </div>
       </div>
     </header>
     <main class="main-content">
-      <section>
-        <div class="container"></div>
+      <h1 class="visually-hidden">Дизайн-студия Paratype.</h1>
+      <section class="promo">
+        <div class="container">
+          <h2 class="visually-hidden">Лучшие предложения</h2>
+          <div class="promo__slider slider">
+            <ol class="promo__list slider__list">
+              <li class="slider__item">
+                <a class="promo__slide-container promo-card promo-card--dark special-offer" href="#">
+                  <div class="promo-card__image-wrapper">
+                    <picture>
+                      <source
+                        width="760"
+                        height="440"
+                        type="image/webp"
+                        media="(min-width: 768px)"
+                        srcset="images/promo/promo-sale-tablet@1x.webp 1x, images/promo/promo-sale-tablet@2x.webp 2x" />
+                      <source
+                        width="370"
+                        height="300"
+                        type="image/webp"
+                        srcset="images/promo/promo-sale-mobile@1x.webp 1x, images/promo/promo-sale-mobile@2x.webp 2x" />
+                      <source
+                        width="760"
+                        height="440"
+                        type="image/jpg"
+                        media="(min-width: 768px)"
+                        srcset="images/promo/promo-sale-tablet@1x.jpg 1x, images/promo/promo-sale-tablet@2x.jpg 2x" />
+                      <img
+                        src="images/promo/promo-sale-mobile@1x.jpg"
+                        srcset="images/promo/promo-sale-mobile@2x.jpg 2x"
+                        width="370"
+                        height="300"
+                        alt="Белые линии на черном фоне." />
+                    </picture>
+                  </div>
+                  <div class="promo-card__content">
+                    <p class="font-count">280</p>
+                    <h3 class="promo-card__slogan">30—50%</h3>
+                    <p class="promo-card__description">Распродажа</p>
+                  </div>
+                  <p class="special-offer__count">45</p>
+                </a>
+              </li>
+              <li class="slider__item">
+                <a class="promo__slide-container promo-card promo-card--pragmatica-next" href="#">
+                  <div class="promo-card__image-wrapper">
+                    <picture>
+                      <source
+                        width="760"
+                        height="440"
+                        type="image/webp"
+                        media="(min-width: 768px)"
+                        srcset="images/promo/promo-collection-tablet@1x.webp 1x, images/promo/promo-collection-tablet@2x.webp 2x" />
+                      <source
+                        width="370"
+                        height="300"
+                        type="image/webp"
+                        srcset="images/promo/promo-collection-mobile@1x.webp 1x, images/promo/promo-collection-mobile@2x.webp 2x" />
+                      <source
+                        width="760"
+                        height="440"
+                        type="image/jpg"
+                        media="(min-width: 768px)"
+                        srcset="images/promo/promo-collection-tablet@1x.jpg 1x, images/promo/promo-collection-tablet@2x.jpg 2x" />
+                      <img
+                        src="images/promo/promo-collection-mobile@1x.jpg"
+                        srcset="images/promo/promo-collection-mobile@2x.jpg 2x"
+                        width="370"
+                        height="300"
+                        alt="Красные круги на оранжевом фоне." />
+                    </picture>
+                  </div>
+                  <div class="promo-card__content">
+                    <p class="font-count">20</p>
+                    <h3 class="promo-card__slogan">PRAGMATICA <br />NEXT</h3>
+                    <p class="promo-card__description">Хиты продаж</p>
+                  </div>
+                </a>
+              </li>
+            </ol>
+            <ol class="promo__pagination slider__pagination slider-pagination">
+              <li class="slider-pagination__item">
+                <button class="slider-pagination__button slider-pagination__button--current" type="button">
+                  <span class="visually-hidden">Первый слайд.</span>
+                </button>
+              </li>
+              <li class="slider-pagination__item">
+                <button class="slider-pagination__button" type="button">
+                  <span class="visually-hidden">Второй слайд.</span>
+                </button>
+              </li>
+            </ol>
+          </div>
+        </div>
       </section>
     </main>
     <footer class="footer">
       <div class="container"></div>
     </footer>
-    <script type="module" src="/js/main.js"></script>
+    <script type="module" src="./js/main.js"></script>
   </body>
 </html>

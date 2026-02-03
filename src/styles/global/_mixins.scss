@@ -71,7 +71,6 @@
 }
 
 @mixin header-icon-item {
-  background-color: $color-white;
   color: $color-nero;
   text-decoration: none;
   cursor: pointer;
@@ -82,15 +81,14 @@
     background-color $trans-default,
     opacity $trans-default,
     color $trans-default;
+
   @include tap-reset;
 }
 
-@mixin header-control-size($min: 49, $max: 118, $minVp: 320, $maxVp: 768) {
+@mixin header-control-size {
   flex-shrink: 0;
-
-  @include fluid(width, $min, $max, $minVp, $maxVp);
-  @include fluid(min-height, $min, $max, $minVp, $maxVp);
-
+  width: 60px;
+  height: 60px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -100,11 +98,6 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-
-  @include vp-768 {
-    width: 40px;
-    height: 40px;
-  }
 
   @include vp-1024 {
     width: 24px;

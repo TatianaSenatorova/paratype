@@ -15,5 +15,9 @@
     color: $color-nero;
     display: flex;
     flex-direction: column;
+
+    &:has(.header__dropdown.is-opened) {
+      overflow: hidden;
+    }
   }
 }

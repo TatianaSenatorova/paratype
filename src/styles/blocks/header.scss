@@ -4,6 +4,8 @@
   position: relative;
   z-index: $z-index-third;
 
+  --header-height: 100px;
+
   &__top {
     min-height: 40px;
   }
@@ -44,8 +46,19 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    border-top: 1px solid $color-whisper;
-    border-bottom: 1px solid $color-whisper;
+    background-image: linear-gradient(
+      to bottom,
+      $color-whisper 0,
+      $color-whisper 1px,
+      transparent 1px,
+      transparent calc(100% - 1px),
+      $color-whisper calc(100% - 1px),
+      $color-whisper 100%
+    );
+  }
+
+  &__user-menu {
+    margin: 0;
   }
 
   &__controls {
@@ -67,7 +80,9 @@
     height: calc(100vh - var(--header-height));
     display: flex;
     flex-direction: column;
+    padding: 20px 30px 30px;
     overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
     background-color: $color-white;
     transform-origin: top;
     transform: scaleY(0);
@@ -83,7 +98,13 @@
     }
   }
 
-  @include vp-1024 {
+  &__theme {
+    width: 100%;
+    max-width: 460px;
+    margin: 0 auto 20px;
+  }
+
+  @include vp-768 {
     min-height: 120px;
 
     &__dropdown {
@@ -94,11 +115,10 @@
     }
 
     &__top {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      display: flex;
       align-items: center;
+      gap: 20px;
       min-height: 60px;
-      padding: 0 10px;
     }
 
     &__offer {
@@ -107,6 +127,10 @@
 
     &__offer-text--accent {
       margin-right: 21px;
+    }
+
+    &__user-menu {
+      margin-left: auto;
     }
 
     &__bar {

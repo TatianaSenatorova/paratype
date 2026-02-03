@@ -8,14 +8,6 @@
   &__wrapper {
     display: flex;
     flex-direction: column;
-    padding: 20px 30px 30px;
-  }
-
-  &.is-opened {
-    .menu__wrapper {
-      transform: scaleY(1);
-      opacity: 1;
-    }
   }
 
   &__primary,

@@ -5,12 +5,13 @@
 
   position: relative;
   flex-shrink: 0;
-
-  @include fluid(width, 49, 118, 320, 768);
-  @include fluid(min-height, 49, 118, 320, 768);
-
+  width: 60px;
+  height: 60px;
+  display: grid;
+  place-items: center;
   border: none;
   background-color: $color-transparent;
+  border-left: 1px solid $color-whisper;
   cursor: pointer;
   transition:
     background-color $trans-default,
@@ -41,15 +42,9 @@
   }
 
   &__icon {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 1;
-
-    @include fluid(width, 20, 40);
-    @include fluid(height, 2, 4);
-
+    position: relative;
+    width: 20px;
+    height: 2px;
     background-color: var(--icon-color);
     border-radius: 1px;
     transition: background-color $trans-default;
@@ -59,21 +54,39 @@
       position: absolute;
       left: 0;
       content: '';
-
-      @include fluid(width, 20, 40);
-      @include fluid(height, 2, 4);
-
+      width: 20px;
+      height: 2px;
       background-color: var(--icon-color);
       border-radius: 2px;
     }
 
     &::before {
-      @include fluid(bottom, 6, 12);
+      bottom: 6px;
     }
 
     &::after {
-      @include fluid(top, 6, 12);
+      top: 6px;
     }
+  }
+
+  &.is-opened {
+    background-color: $color-sunset-oranget;
+  }
+
+  &.is-opened &__icon {
+    background-color: $color-transparent;
+  }
+
+  &.is-opened &__icon::before {
+    transform: rotate(45deg);
+    bottom: 0;
+    background-color: $color-white-smoke;
+  }
+
+  &.is-opened &__icon::after {
+    transform: rotate(-45deg);
+    top: 0;
+    background-color: $color-white-smoke;
   }
 
   @include vp-1024 {
