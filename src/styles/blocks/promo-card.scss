@@ -1,0 +1,132 @@
+@use '../global' as *;
+
+.promo-card {
+  --img-transform: scale(1);
+  --slogan-color: #{$color-sunset-oranget};
+
+  box-sizing: border-box;
+  position: relative;
+  display: grid;
+  min-height: 245px;
+  padding: 18px 20px 57px;
+  background-color: $color-whisper;
+  color: $color-nero;
+  border-radius: 10px;
+  text-decoration: none;
+  transition: opacity $trans-default;
+
+  &:focus-visible,
+  &:hover {
+    --img-transform: scale(1.2);
+    --slogan-color: #{$color-sunset-oranget};
+
+    outline: none;
+  }
+
+  &:active {
+    opacity: 0.7;
+  }
+
+  &--dark {
+    background-color: $color-nero;
+    color: $color-whisper;
+  }
+
+  &__image-wrapper {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    margin: auto;
+    overflow: hidden;
+    border-radius: 10px;
+  }
+
+  & img {
+    display: block;
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+    transform: var(--img-transform);
+    transition: transform 0.5s;
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    grid-template-columns: min-content 1fr 40px;
+    grid-template-rows: min-content 1fr;
+    align-items: center;
+    gap: 20px 18px;
+    z-index: 1;
+  }
+
+  &__slogan {
+    grid-area: 2 / 1 / 3 / -1;
+    justify-self: center;
+    margin: 0;
+    font-weight: 600;
+    font-size: 42px;
+    line-height: 0.8;
+    text-transform: uppercase;
+    text-align: center;
+    color: var(--slogan-color);
+    transition: color $trans-default;
+  }
+
+  &--pragmatica-next .promo-card__slogan {
+    font-weight: 750;
+    font-variation-settings: 'wdth' 10;
+    line-height: 0.75;
+  }
+
+  &__description {
+    grid-area: 1 / 2 / 2 / 3;
+    justify-self: start;
+    margin: 0;
+    font-weight: 500;
+    font-size: 14px;
+    line-height: 1;
+    letter-spacing: 0.01em;
+    color: inherit;
+
+    @include vp-768 {
+      grid-area: 3 / 1 / 4 / -1;
+      justify-self: center;
+    }
+  }
+
+  &__font-count {
+    margin: 0;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1;
+    text-transform: uppercase;
+  }
+
+  &__special-offer {
+    position: absolute;
+    right: 16px;
+    bottom: 16px;
+    margin: 0;
+  }
+
+  @include vp-768 {
+    min-height: 440px;
+    padding: 21px 20px 31px;
+
+    &__content {
+      grid-template-columns: auto;
+      grid-template-rows: min-content 1fr min-content;
+      justify-items: start;
+    }
+
+    &__slogan {
+      font-size: 60px;
+    }
+
+    &--pragmatica-next .promo-card__slogan {
+      font-size: 120px;
+    }
+  }
+}

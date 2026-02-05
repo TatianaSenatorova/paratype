@@ -1,4 +1,4 @@
-import { isEscapeKey } from '../utils.js/keydown';
+import { isEscapeKey } from '../utils/keydown';
 import { setHeaderHeight } from './set-header-height';
 
 const initBurgerMenu = () => {

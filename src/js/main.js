@@ -4,12 +4,14 @@ import { initBurgerMenu } from './modules/burger';
 import { moveHeaderElements } from './modules/move-header-elements.js';
 import { initThemeToggle } from './modules/theme.js';
 import { setHeaderHeight } from './modules/set-header-height.js';
+import { initPromoSwiper } from './modules/promo-swiper.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
   moveHeaderElements();
   initThemeToggle();
   setHeaderHeight();
+  initPromoSwiper();
 });
 
 window.addEventListener('load', () => {});
