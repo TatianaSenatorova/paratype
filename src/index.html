@@ -28,7 +28,7 @@
             <a class="logo__image" href="#">
               <picture>
                 <source
-                  media="(min-width: 768px)"
+                  media="(min-width: 1024px)"
                   srcset="images/logo-tablet.svg"
                   type="image/svg+xml"
                   width="230"
@@ -173,10 +173,10 @@
       <section class="promo">
         <div class="container">
           <h2 class="visually-hidden">Лучшие предложения</h2>
-          <div class="promo__slider slider">
-            <ol class="promo__list slider__list">
-              <li class="slider__item">
-                <a class="promo__slide-container promo-card promo-card--dark special-offer" href="#">
+          <div class="promo__swiper swiper" data-promo-swiper>
+            <div class="swiper__wrapper swiper-wrapper">
+              <div class="swiper__slide swiper-slide">
+                <a class="promo-card promo-card--dark" href="#">
                   <div class="promo-card__image-wrapper">
                     <picture>
                       <source
@@ -204,16 +204,18 @@
                         alt="Белые линии на черном фоне." />
                     </picture>
                   </div>
+
                   <div class="promo-card__content">
-                    <p class="font-count">280</p>
+                    <p class="promo-card__font-count">280</p>
                     <h3 class="promo-card__slogan">30—50%</h3>
                     <p class="promo-card__description">Распродажа</p>
                   </div>
+
                   <p class="special-offer__count">45</p>
                 </a>
-              </li>
-              <li class="slider__item">
-                <a class="promo__slide-container promo-card promo-card--pragmatica-next" href="#">
+              </div>
+              <div class="swiper__slide swiper-slide">
+                <a class="promo-card promo-card--pragmatica-next" href="#">
                   <div class="promo-card__image-wrapper">
                     <picture>
                       <source
@@ -251,25 +253,14 @@
                     </picture>
                   </div>
                   <div class="promo-card__content">
-                    <p class="font-count">20</p>
+                    <p class="promo-card__font-count">20</p>
                     <h3 class="promo-card__slogan">PRAGMATICA <br />NEXT</h3>
                     <p class="promo-card__description">Хиты продаж</p>
                   </div>
                 </a>
-              </li>
-            </ol>
-            <ol class="promo__pagination slider__pagination slider-pagination">
-              <li class="slider-pagination__item">
-                <button class="slider-pagination__button slider-pagination__button--current" type="button">
-                  <span class="visually-hidden">Первый слайд.</span>
-                </button>
-              </li>
-              <li class="slider-pagination__item">
-                <button class="slider-pagination__button" type="button">
-                  <span class="visually-hidden">Второй слайд.</span>
-                </button>
-              </li>
-            </ol>
+              </div>
+            </div>
+            <div class="promo__pagination swiper__pagination swiper-pagination" data-promo-swiper-pagination></div>
           </div>
         </div>
       </section>

@@ -144,17 +144,12 @@
 
     &__bar {
       align-items: stretch;
-      padding: 30px $container-padding-tablet;
-    }
-
-    &__controls {
-      margin-left: auto;
-      display: flex;
-      align-items: center;
+      padding: 0 $container-padding-tablet;
+      min-height: 120px;
     }
 
     &__theme {
-      margin-bottom: 0;
+      margin: 0 35px 0 0;
     }
   }
 }

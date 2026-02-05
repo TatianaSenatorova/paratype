@@ -94,8 +94,9 @@
   align-items: center;
   justify-content: center;
 
-  @include vp-768 {
+  @include vp-1024 {
     width: unset;
+    padding: 5px 10px 5px 26px;
     gap: 15px;
   }
 }
@@ -105,7 +106,7 @@
   height: 20px;
   flex-shrink: 0;
 
-  @include vp-768 {
+  @include vp-1024 {
     width: 24px;
     height: 24px;
   }
