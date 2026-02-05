@@ -5,6 +5,7 @@
     position: relative;
     display: grid;
     grid-template-columns: 1fr 1fr;
+    column-gap: 9px;
     width: 100%;
     max-width: 450px;
     min-height: 40px;
@@ -21,7 +22,8 @@
     }
 
     &:focus-visible {
-      outline: none;
+      outline: 2px solid $color-sunset-oranget;
+      outline-offset: 2px;
     }
 
     &:active {
@@ -71,9 +73,14 @@
     text-transform: uppercase;
     color: $color-nero;
     transition: color $trans-default;
+
+    &--dark {
+      gap: 10px;
+    }
   }
 
   &__icon {
+    display: block;
     width: 20px;
     height: 20px;
     flex-shrink: 0;

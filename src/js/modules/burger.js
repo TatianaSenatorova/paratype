@@ -1,4 +1,5 @@
 import { isEscapeKey } from '../utils.js/keydown';
+import { setHeaderHeight } from './set-header-height';
 
 const initBurgerMenu = () => {
   const header = document.querySelector('[data-header]');
@@ -24,6 +25,7 @@ const initBurgerMenu = () => {
     menu.classList.add('is-opened');
     burger.classList.add('is-opened');
     burger.setAttribute('aria-expanded', 'true');
+    setHeaderHeight();
     document.addEventListener('keydown', onDocumentKeydown);
     document.addEventListener('click', onDocumentClick);
   };
@@ -32,6 +34,7 @@ const initBurgerMenu = () => {
     menu.classList.remove('is-opened');
     burger.classList.remove('is-opened');
     burger.setAttribute('aria-expanded', 'false');
+    setHeaderHeight();
     document.removeEventListener('keydown', onDocumentKeydown);
     document.removeEventListener('click', onDocumentClick);
   };

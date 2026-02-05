@@ -1,27 +1,46 @@
 @use '../global' as *;
 
 .menu {
-  --header-height: 110px;
-
   position: relative;
+  display: flex;
+  flex-direction: column;
 
   &__wrapper {
+    flex: 1;
     display: flex;
     flex-direction: column;
   }
 
   &__primary,
   &__secondary {
-    margin: 0;
     padding: 0;
     list-style: none;
   }
 
+  &__primary {
+    margin: 0 0 20px;
+  }
+
+  &__profile {
+    margin: 0 0 30px;
+  }
+
+  &__secondary {
+    margin: 0;
+  }
+
   &__item {
-    border-bottom: 1px solid $color-nero;
+    &:not(:last-child) {
+      border-bottom: 1px solid $color-nero;
+    }
+
+    &--main {
+      display: none;
+    }
   }
 
   &__link {
+    min-height: 49px;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -30,7 +49,7 @@
     text-transform: uppercase;
     text-decoration: none;
     color: $color-nero;
-    padding: 6px 0 5px;
+    padding: 7px 0 3px;
     transition:
       color $trans-default,
       opacity $trans-default;
@@ -45,20 +64,43 @@
       opacity: 0.7;
     }
 
-    &.is-current {
+    &--current {
       color: $color-sunset-oranget;
     }
   }
 
   &__link--small {
     font-size: 12px;
-    text-transform: none;
     padding: 5px 0;
+    text-transform: uppercase;
   }
 
   &__count {
+    display: block;
     font-size: 14px;
     font-weight: 600;
+  }
+
+  &__title {
+    margin: 0;
+    font-weight: 600;
+    font-size: 24px;
+    text-transform: uppercase;
+    padding: 6px 0 5px;
+  }
+
+  &__auth {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+
+  &__footer {
+    margin: auto 0 0;
+  }
+
+  &__social {
+    margin: 0 0 20px;
   }
 
   @include vp-1024 {
@@ -79,9 +121,7 @@
     &__profile,
     &__secondary,
     &__footer {
-      @include vp-1024 {
-        display: none;
-      }
+      display: none;
     }
 
     &__primary {
@@ -98,6 +138,14 @@
       &:first-child {
         border-left: 1px solid $color-whisper;
       }
+    }
+
+    &__item--main {
+      display: flex;
+    }
+
+    &__item--secondary .menu__link {
+      color: $color-nobel;
     }
 
     &__link {

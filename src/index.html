@@ -55,7 +55,7 @@
               <span class="visually-hidden">Поиск</span>
             </a>
             <ul class="header__user-menu user-menu" data-user-menu>
-              <li>
+              <li class="user-menu__item">
                 <a href="#" class="user-menu__link">
                   <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
                     <use href="/images/sprite/stack.svg#heart"></use>
@@ -64,7 +64,7 @@
                   <span class="user-menu__count">0</span>
                 </a>
               </li>
-              <li>
+              <li class="user-menu__item">
                 <a href="#" class="user-menu__link">
                   <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
                     <use href="/images/sprite/stack.svg#basket"></use>
@@ -73,7 +73,7 @@
                   <span class="user-menu__count">0</span>
                 </a>
               </li>
-              <li>
+              <li class="user-menu__item">
                 <a href="#" class="user-menu__link">
                   <svg class="user-menu__svg" width="20" height="20" aria-hidden="true" focusable="false">
                     <use href="/images/sprite/stack.svg#account"></use>
@@ -86,7 +86,12 @@
         </div>
         <div class="header__dropdown" data-menu>
           <div class="header__theme theme" data-theme>
-            <button class="theme__toggle" type="button" data-theme-toggle aria-pressed="false" aria-label="Переключить тему">
+            <button
+              class="theme__toggle"
+              type="button"
+              data-theme-toggle
+              aria-pressed="false"
+              aria-label="Переключить тему">
               <span class="theme__label theme__label--light">
                 <svg class="theme__icon" width="20" height="20" aria-hidden="true" focusable="false">
                   <use href="/images/sprite/stack.svg#sun"></use>
@@ -104,8 +109,8 @@
           <nav class="menu" id="header-menu" aria-label="Навигация сайта">
             <div class="menu__wrapper">
               <ul class="menu__primary">
-                <li class="menu__item">
-                  <a class="menu__link menu__link--current" href="#">Главная</a>
+                <li class="menu__item menu__item--main">
+                  <a class="menu__link" href="#">Главная</a>
                 </li>
                 <li class="menu__item">
                   <a class="menu__link" href="#"> Каталог <span class="menu__count">988</span> </a>
@@ -113,8 +118,8 @@
                 <li class="menu__item">
                   <a class="menu__link" href="#"> Коллекции <span class="menu__count">45</span> </a>
                 </li>
-                <li class="menu__item"><a class="menu__link" href="#">Компания</a></li>
-                <li class="menu__item"><a class="menu__link" href="#">Справочник</a></li>
+                <li class="menu__item menu__item--secondary"><a class="menu__link" href="#">Компания</a></li>
+                <li class="menu__item menu__item--secondary"><a class="menu__link" href="#">Справочник</a></li>
               </ul>
 
               <div class="menu__profile mobile-only">
@@ -132,24 +137,30 @@
                 <li class="menu__item"><a class="menu__link menu__link--small" href="#">Контакты</a></li>
               </ul>
               <footer class="menu__footer mobile-only">
-                <ul class="menu__social">
+                <ul class="menu__social social">
                   <li>
-                    <a href="https://t.me/paratype_fonts">
-                      <span class="visually-hidden">Telegram</span>
+                    <a class="social__link social__link--tg" href="https://t.me/paratype_fonts">
+                      <svg class="social__icon" width="40" height="40" aria-hidden="true">
+                        <use href="/images/sprite/stack.svg#tg"></use>
+                      </svg>
+                      <span class="visually-hidden">Телеграм</span>
                     </a>
                   </li>
                   <li>
-                    <a href="https://vk.com/paratypefoundry">
+                    <a class="social__link social__link--vk" href="https://vk.com/paratypefoundry">
+                      <svg class="social__icon" width="40" height="40" aria-hidden="true">
+                        <use href="/images/sprite/stack.svg#vk"></use>
+                      </svg>
                       <span class="visually-hidden">ВКонтакте</span>
                     </a>
                   </li>
                 </ul>
-                <div class="menu__copyright">
-                  <p>
+                <div class="menu__copyright copyright">
+                  <p class="copyright__text copyright__text--name">
                     © 1998–2022. Паратайп.<br />
                     Все&nbsp;авторские права защищены.
                   </p>
-                  <a href="https://wemakefab.ru/">Дизайн Wemakefab</a>
+                  <a class="copyright__text copyright__text--link" href="https://wemakefab.ru/"> Дизайн Wemakefab </a>
                 </div>
               </footer>
             </div>
@@ -210,18 +221,27 @@
                         height="440"
                         type="image/webp"
                         media="(min-width: 768px)"
-                        srcset="images/promo/promo-collection-tablet@1x.webp 1x, images/promo/promo-collection-tablet@2x.webp 2x" />
+                        srcset="
+                          images/promo/promo-collection-tablet@1x.webp 1x,
+                          images/promo/promo-collection-tablet@2x.webp 2x
+                        " />
                       <source
                         width="370"
                         height="300"
                         type="image/webp"
-                        srcset="images/promo/promo-collection-mobile@1x.webp 1x, images/promo/promo-collection-mobile@2x.webp 2x" />
+                        srcset="
+                          images/promo/promo-collection-mobile@1x.webp 1x,
+                          images/promo/promo-collection-mobile@2x.webp 2x
+                        " />
                       <source
                         width="760"
                         height="440"
                         type="image/jpg"
                         media="(min-width: 768px)"
-                        srcset="images/promo/promo-collection-tablet@1x.jpg 1x, images/promo/promo-collection-tablet@2x.jpg 2x" />
+                        srcset="
+                          images/promo/promo-collection-tablet@1x.jpg 1x,
+                          images/promo/promo-collection-tablet@2x.jpg 2x
+                        " />
                       <img
                         src="images/promo/promo-collection-mobile@1x.jpg"
                         srcset="images/promo/promo-collection-mobile@2x.jpg 2x"

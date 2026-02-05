@@ -4,8 +4,6 @@
   position: relative;
   z-index: $z-index-third;
 
-  --header-height: 100px;
-
   &__top {
     min-height: 40px;
   }
@@ -38,14 +36,16 @@
   }
 
   &__offer-text--accent {
-    margin-right: 11px;
+    margin-right: 8px;
     color: $color-sunset-oranget;
   }
 
   &__bar {
     display: flex;
     align-items: center;
+    gap: 10px;
     justify-content: space-between;
+    padding-left: 15px;
     background-image: linear-gradient(
       to bottom,
       $color-whisper 0,
@@ -78,23 +78,33 @@
     left: 0;
     width: 100%;
     height: calc(100vh - var(--header-height));
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto 1fr;
     padding: 20px 30px 30px;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
     background-color: $color-white;
     transform-origin: top;
     transform: scaleY(0);
+    visibility: hidden;
+    pointer-events: none;
     opacity: 0;
     transition:
       transform $trans-default,
+      visibility $trans-default,
       opacity $trans-default;
+    will-change: transform, opacity, visibility;
     z-index: $z-index-third;
 
     &.is-opened {
-      transform: scaleY(1);
+      visibility: visible;
+      pointer-events: auto;
       opacity: 1;
+      transform: scaleY(1);
+      transition:
+        opacity $trans-default,
+        transform $trans-default;
     }
   }
 
@@ -104,14 +114,13 @@
     margin: 0 auto 20px;
   }
 
-  @include vp-768 {
+  @include vp-1024 {
     min-height: 120px;
 
     &__dropdown {
       position: static;
       transform: none;
       opacity: 1;
-      display: contents;
     }
 
     &__top {
@@ -135,12 +144,17 @@
 
     &__bar {
       align-items: stretch;
+      padding: 30px $container-padding-tablet;
     }
 
     &__controls {
       margin-left: auto;
       display: flex;
       align-items: center;
+    }
+
+    &__theme {
+      margin-bottom: 0;
     }
   }
 }

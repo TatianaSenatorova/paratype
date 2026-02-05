@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+:root {
+  --header-height: 100px;
+}
+
 img {
   max-width: 100%;
   height: auto;

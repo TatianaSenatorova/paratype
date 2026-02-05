@@ -6,11 +6,13 @@
   list-style: none;
 
   &__link {
+    position: relative;
+
     @include header-control-size;
     @include header-icon-item;
     @include header-icon-states;
 
-    position: relative;
+    border-left: 1px solid $color-whisper;
   }
 
   &__svg {
@@ -28,15 +30,18 @@
   @include vp-1024 {
     justify-content: flex-end;
 
-    &__text {
-      @include visually-shown;
-
-      font-size: 12px;
-      text-transform: uppercase;
+    &__item:nth-child(1) .user-menu__link {
+      border-left: unset;
     }
 
+    &__text,
     &__count {
       @include visually-shown;
+
+      font-weight: 600;
+      font-size: 14px;
+      text-transform: uppercase;
+      color: inherit;
     }
   }
 }

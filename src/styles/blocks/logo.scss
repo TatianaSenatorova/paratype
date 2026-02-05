@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   box-sizing: border-box;
-  padding: 11px 9px 16px 10px;
+  padding: 11px 10px 16px;
 
   &__text {
     display: none;
@@ -37,14 +37,15 @@
     height: 100%;
   }
 
-  @include vp-768 {
-    padding: 11px 24px 16px;
-  }
-
   @include vp-1024 {
     display: flex;
     align-items: center;
-    padding: 15px 20px 17px 30px;
+    padding: unset;
+
+    &__image {
+      width: 230px;
+      height: 60px;
+    }
   }
 
   @include vp-1280 {

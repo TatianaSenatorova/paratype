@@ -1,0 +1,57 @@
+@use '../global' as *;
+
+.social {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  padding: 0;
+  list-style: none;
+
+  &__link {
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: $color-nero;
+    color: $color-white;
+    transition:
+      background-color 0.3s,
+      opacity 0.3s;
+
+    &:focus-visible {
+      outline: none;
+      background-color: $color-sunset-oranget;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        background-color: $color-sunset-oranget;
+      }
+    }
+
+    &:active {
+      opacity: 0.5;
+    }
+
+    &--disabled {
+      background-color: $color-whisper;
+      opacity: 1;
+      pointer-events: none;
+      cursor: default;
+    }
+
+    &--disabled:focus-visible {
+      background-color: $color-whisper;
+      opacity: 1;
+    }
+  }
+
+  &__icon {
+    display: block;
+    flex-shrink: 0;
+    width: 40px;
+    height: 40px;
+    fill: currentColor;
+  }
+}

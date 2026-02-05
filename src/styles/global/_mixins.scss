@@ -74,9 +74,9 @@
   color: $color-nero;
   text-decoration: none;
   cursor: pointer;
-  border-left: 1px solid $color-whisper;
-  display: grid;
-  place-items: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition:
     background-color $trans-default,
     opacity $trans-default,
@@ -88,10 +88,16 @@
 @mixin header-control-size {
   flex-shrink: 0;
   width: 60px;
-  height: 60px;
+  min-height: 60px;
+  padding: 5px;
   display: flex;
   align-items: center;
   justify-content: center;
+
+  @include vp-768 {
+    width: unset;
+    gap: 15px;
+  }
 }
 
 @mixin header-icon-svg {
@@ -99,7 +105,7 @@
   height: 20px;
   flex-shrink: 0;
 
-  @include vp-1024 {
+  @include vp-768 {
     width: 24px;
     height: 24px;
   }
@@ -121,18 +127,6 @@
   @media (hover: hover) and (pointer: fine) {
     &:hover {
       color: $color-sunset-oranget;
-    }
-  }
-
-  @include vp-1024 {
-    &:focus-visible {
-      color: $color-sunset-oranget;
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      &:hover {
-        color: $color-sunset-oranget;
-      }
     }
   }
 }
