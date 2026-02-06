@@ -1,7 +1,9 @@
 @use '../global' as *;
 
 .burger {
-  --icon-color: #{$color-nero};
+  color: inherit;
+
+  --icon-color: currentColor;
 
   position: relative;
   flex-shrink: 0;

@@ -1,3 +1,5 @@
+@use './variables' as *;
+
 *,
 *::before,
 *::after {
@@ -5,7 +7,22 @@
 }
 
 :root {
+  /* layout */
   --header-height: 100px;
+
+  /* theme (light) */
+  --color-background: #{$color-white};
+  --color-text: #{$color-nero};
+
+  color-scheme: light;
+}
+
+html.theme-dark {
+  /* theme (dark) */
+  --color-background: #{$color-black};
+  --color-text: #{$color-almost-white};
+
+  color-scheme: dark;
 }
 
 img {

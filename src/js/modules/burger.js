@@ -1,5 +1,6 @@
 import { isEscapeKey } from '../utils/keydown';
 import { setHeaderHeight } from './set-header-height';
+import { DESKTOP_WIDTH } from '../constants.js';
 
 const initBurgerMenu = () => {
   const header = document.querySelector('[data-header]');
@@ -46,6 +47,18 @@ const initBurgerMenu = () => {
     }
     openMenu();
   });
+
+  const handleBreakpointChange = () => {
+    if (DESKTOP_WIDTH.matches && menu.classList.contains('is-opened')) {
+      closeMenu();
+    }
+  };
+
+  DESKTOP_WIDTH.addEventListener('change', handleBreakpointChange);
+
+  if (DESKTOP_WIDTH.matches && menu.classList.contains('is-opened')) {
+    closeMenu();
+  }
 };
 
 export { initBurgerMenu };

@@ -71,12 +71,16 @@
     font-size: 12px;
     font-weight: 600;
     text-transform: uppercase;
-    color: $color-nero;
+    color: inherit;
     transition: color $trans-default;
 
     &--dark {
       gap: 10px;
     }
+  }
+
+  &__toggle--dark .theme__label--light {
+    color: $color-nero;
   }
 
   &__icon {

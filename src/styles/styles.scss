@@ -1,4 +1,5 @@
-// Common
+@use './vendor/swiper.min.css';
+
 
 // Blocks
 @use './blocks/page';
@@ -15,5 +16,6 @@
 @use './blocks/social';
 @use './blocks/copyright';
 @use './blocks/promo';
-@use './blocks/swiper';
+@use './blocks/promo-swiper';
 @use './blocks/promo-card';
+@use './blocks/promo-bullet';

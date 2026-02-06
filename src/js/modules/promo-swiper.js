@@ -1,4 +1,4 @@
-import { DESKTOP_WIDTH } from '../constants.js';
+import { TABLET_WIDTH } from '../constants.js';
 import { getSwiper } from '../utils/get-swiper.js';
 
 let promoSwiper = null;
@@ -21,7 +21,7 @@ export const initPromoSwiper = () => {
       pagination: {
         el: paginationEl,
         clickable: true,
-        bulletClass: 'promo-bullet slider-pagination__bullet',
+        bulletClass: 'promo-bullet',
         bulletActiveClass: 'promo-bullet--active',
         renderBullet: (index, className) =>
           `<button type="button" class="${className}" aria-label="Слайд ${index + 1}"></button>`,
@@ -36,7 +36,7 @@ export const initPromoSwiper = () => {
   };
 
   const breakpointChecker = () => {
-    if (DESKTOP_WIDTH.matches) {
+    if (TABLET_WIDTH.matches) {
       destroy();
     } else {
       enable();
@@ -45,5 +45,5 @@ export const initPromoSwiper = () => {
 
   breakpointChecker();
 
-  DESKTOP_WIDTH.addEventListener('change', breakpointChecker);
+  TABLET_WIDTH.addEventListener('change', breakpointChecker);
 };

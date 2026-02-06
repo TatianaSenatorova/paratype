@@ -1,0 +1,63 @@
+@use '../global' as *;
+
+.promo-bullet {
+  display: grid;
+  place-items: center;
+  box-sizing: border-box;
+  padding: 0;
+
+  @include fluid(width, 6, 10, 390, 1023);
+  @include fluid(height, 6, 10, 390, 1023);
+
+  background-color: $color-nobel;
+  background-image: radial-gradient($color-white 35%, $color-transparent 35%);
+  border: 1px solid $color-white;
+  border-radius: 50%;
+  transition:
+    background-color $trans-default,
+    border $trans-default,
+    opacity $trans-default;
+  z-index: $z-index-second;
+  cursor: pointer;
+
+  @include tap-reset;
+
+  &:focus-visible {
+    outline: none;
+    background-color: $color-sunset-oranget;
+  }
+
+  &:active {
+    background-color: $color-nobel;
+    background-image: radial-gradient($color-sunset-oranget 1px, $color-transparent 1px);
+  }
+
+  &:disabled {
+    opacity: 1;
+    border: 1px solid $color-nobel;
+    background-color: $color-whisper;
+    background-image: none;
+    pointer-events: none;
+    cursor: default;
+  }
+
+  &::before {
+    width: 12px;
+    height: 12px;
+    content: '';
+    background-color: $color-transparent;
+    border-radius: 50%;
+    z-index: -1;
+  }
+
+  &--active {
+    background-color: $color-sunset-oranget;
+    background-image: none;
+    border: 1px solid $color-sunset-oranget;
+
+    &:focus-visible,
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

@@ -11,8 +11,8 @@
     font-size: 12px;
     line-height: 1.6;
     font-weight: 500;
-    background-color: $color-white;
-    color: $color-nero;
+    background-color: var(--color-background);
+    color: var(--color-text);
     display: flex;
     flex-direction: column;
 
