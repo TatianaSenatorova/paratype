@@ -1,5 +1,5 @@
+import { SwiperCore, swiperModules } from '../vendor/swiper.js';
 import { TABLET_WIDTH } from '../constants.js';
-import { getSwiper } from '../utils/get-swiper.js';
 
 let promoSwiper = null;
 
@@ -8,13 +8,13 @@ export const initPromoSwiper = () => {
   if (!root) return;
 
   const paginationEl = root.querySelector('[data-promo-swiper-pagination]');
-  const Swiper = getSwiper();
-  if (!Swiper) return;
+  if (!paginationEl) return;
 
   const enable = () => {
     if (promoSwiper) return;
 
-    promoSwiper = new Swiper(root, {
+    promoSwiper = new SwiperCore(root, {
+      modules: [swiperModules.Pagination],
       slidesPerView: 1,
       spaceBetween: 20,
       speed: 700,
@@ -44,6 +44,5 @@ export const initPromoSwiper = () => {
   };
 
   breakpointChecker();
-
   TABLET_WIDTH.addEventListener('change', breakpointChecker);
 };

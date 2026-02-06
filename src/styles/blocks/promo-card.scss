@@ -7,7 +7,8 @@
   box-sizing: border-box;
   position: relative;
   display: grid;
-  min-height: 245px;
+  aspect-ratio: 370 / 300;
+  width: 100%;
   padding: 18px 20px 57px;
   background-color: $color-whisper;
   color: inherit;
@@ -28,7 +29,7 @@
   }
 
   &--dark {
-    background-color: $color-nero;
+    background-color: $color-black;
     color: $color-whisper;
   }
 
@@ -74,6 +75,10 @@
     transition: color $trans-default;
   }
 
+  &--pragmatica-next {
+    background-color: $color-melon;
+  }
+
   &--pragmatica-next .promo-card__slogan {
     font-weight: 750;
     font-variation-settings: 'wdth' 10;
@@ -89,11 +94,6 @@
     line-height: 1;
     letter-spacing: 0.01em;
     color: inherit;
-
-    @include vp-768 {
-      grid-area: 3 / 1 / 4 / -1;
-      justify-self: center;
-    }
   }
 
   &__font-count {
@@ -112,7 +112,7 @@
   }
 
   @include vp-768 {
-    min-height: 440px;
+    aspect-ratio: 760 / 440;
     padding: 21px 20px 31px;
 
     &__content {
@@ -123,6 +123,11 @@
 
     &__slogan {
       font-size: 60px;
+    }
+
+    &__description {
+      grid-area: 3 / 1 / 4 / -1;
+      justify-self: center;
     }
 
     &--pragmatica-next .promo-card__slogan {

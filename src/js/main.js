@@ -1,4 +1,8 @@
 import '../styles/styles.scss';
+import 'swiper/css';
+import 'swiper/css/pagination';
+import 'swiper/css/navigation';
+import 'swiper/css/scrollbar';
 
 import { initBurgerMenu } from './modules/burger';
 import { initMoveHeaderElements } from './modules/move-header-elements.js';
