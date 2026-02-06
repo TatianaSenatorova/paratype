@@ -3,6 +3,7 @@
 .promo-card {
   --img-transform: scale(1);
   --slogan-color: #{$color-sunset-oranget};
+  --offer-space: 8px;
 
   box-sizing: border-box;
   position: relative;
@@ -67,8 +68,8 @@
     justify-self: center;
     margin: 0;
     font-weight: 600;
-    font-size: 42px;
-    line-height: 0.8;
+    font-size: 46px;
+    line-height: 0.86;
     text-transform: uppercase;
     text-align: center;
     color: var(--slogan-color);
@@ -80,9 +81,11 @@
   }
 
   &--pragmatica-next .promo-card__slogan {
-    font-weight: 750;
-    font-variation-settings: 'wdth' 10;
-    line-height: 0.75;
+    font-variation-settings:
+      'wght' 660,
+      'wdth' 88;
+    letter-spacing: -0.03em;
+    line-height: 0.82;
   }
 
   &__description {
@@ -106,14 +109,42 @@
 
   &__special-offer {
     position: absolute;
-    right: 16px;
-    bottom: 16px;
+    top: var(--offer-space);
+    right: var(--offer-space);
+    display: grid;
+    place-items: center;
+    width: 40px;
+    height: 40px;
     margin: 0;
+    border-radius: 50%;
+    background-color: $color-sunset-oranget;
+    color: $color-white;
+    font-weight: 600;
+    font-size: 12px;
+    line-height: 1;
+  }
+
+  @include vp-390 {
+    &__slogan {
+      @include fluid(font-size, 34, 80, 390, 768);
+    }
+
+    &--pragmatica-next .promo-card__slogan {
+      @include fluid(font-size, 36, 78, 390, 768);
+    }
   }
 
   @include vp-768 {
     aspect-ratio: 760 / 440;
     padding: 21px 20px 31px;
+
+    &__slogan {
+      @include fluid(font-size, 48, 60, 768, 1600);
+    }
+
+    &--pragmatica-next .promo-card__slogan {
+      @include fluid(font-size, 46, 104, 768, 1600);
+    }
 
     &__content {
       grid-template-columns: auto;
@@ -121,17 +152,14 @@
       justify-items: start;
     }
 
-    &__slogan {
-      font-size: 60px;
-    }
-
     &__description {
       grid-area: 3 / 1 / 4 / -1;
       justify-self: center;
     }
 
-    &--pragmatica-next .promo-card__slogan {
-      font-size: 120px;
+    &__special-offer {
+      @include fluid(width, 25, 45, 768, 1600);
+      @include fluid(height, 25, 45, 768, 1600);
     }
   }
 }

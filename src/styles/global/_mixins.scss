@@ -1,5 +1,11 @@
 @use './variables' as *;
 
+@mixin vp-390 {
+  @media (min-width: $vp-390) {
+    @content;
+  }
+}
+
 @mixin vp-768 {
   @media (min-width: $vp-768) {
     @content;
