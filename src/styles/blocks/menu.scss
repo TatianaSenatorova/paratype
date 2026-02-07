@@ -68,7 +68,8 @@
     &.menu__link--current:focus-visible {
       position: relative;
       outline: none;
-      z-index: 2;
+      isolation: isolate;
+      z-index: 20;
       box-shadow:
         0 0 0 2px $color-white,
         0 0 0 4px $color-sunset-oranget;
