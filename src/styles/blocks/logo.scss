@@ -5,7 +5,12 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  padding: 11px 10px 16px;
+
+  @include fluid(padding-top, 4, 11, 320, 390);
+  @include fluid(padding-right, 4, 10, 320, 390);
+  @include fluid(padding-bottom, 6, 16, 320, 390);
+  @include fluid(padding-left, 4, 10, 320, 390);
+
   color: var(--color-text);
 
   &__text {
@@ -14,8 +19,10 @@
 
   &__image {
     display: block;
-    width: 40px;
-    height: 33px;
+
+    @include fluid(width, 30, 40, 320, 390);
+    @include fluid(height, 25, 33, 320, 390);
+
     transition: opacity 0.3s;
     color: inherit;
 

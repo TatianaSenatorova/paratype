@@ -4,7 +4,7 @@
   @include header-icon-item;
   @include header-icon-states;
 
-  border-left: 1px solid $color-whisper;
+  border-right: 1px solid $color-whisper;
 
   @include vp-1024 {
     height: 100%;

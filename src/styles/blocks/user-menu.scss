@@ -1,13 +1,23 @@
 @use '../global' as *;
 
 .user-menu {
+  // min-width: 0;
+  // max-width: 100%;
   display: flex;
+  flex-wrap: nowrap;
+  // overflow-x: auto;
+  // -webkit-overflow-scrolling: touch;
+  // overscroll-behavior-x: contain;
+  // touch-action: pan-x;
   padding: 0;
   list-style: none;
-  flex-shrink: 0;
 
   &__item {
     flex-shrink: 0;
+  }
+
+  &__item:not(:first-child) {
+    border-left: 1px solid $color-whisper;
   }
 
   &__link {
@@ -16,8 +26,6 @@
     @include header-control-size;
     @include header-icon-item;
     @include header-icon-states;
-
-    border-left: 1px solid $color-whisper;
   }
 
   &__svg {

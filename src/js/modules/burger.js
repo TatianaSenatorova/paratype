@@ -48,7 +48,16 @@ const initBurgerMenu = () => {
     openMenu();
   });
 
+  let resizeTimer = null;
+
   const handleBreakpointChange = () => {
+    header.classList.add('header--resizing');
+
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      header.classList.remove('header--resizing');
+    }, 60);
+
     if (DESKTOP_WIDTH.matches && menu.classList.contains('is-opened')) {
       closeMenu();
     }

@@ -7,14 +7,17 @@
 
   position: relative;
   flex-shrink: 0;
-  width: 60px;
-  height: 60px;
+
+  @include fluid(width, 44, 60, 320, 390);
+  @include fluid(min-height, 44, 60, 320, 390);
+
   display: grid;
   place-items: center;
   border: none;
   padding: 5px;
   background-color: $color-transparent;
   border-left: 1px solid $color-whisper;
+  border-right: 1px solid $color-whisper;
   cursor: pointer;
   transition:
     background-color $trans-default,
@@ -73,7 +76,9 @@
   }
 
   &.is-opened {
-    background-color: $color-sunset-oranget;
+    background: $color-sunset-oranget;
+    border-left-color: $color-sunset-oranget;
+    border-right-color: $color-sunset-oranget;
   }
 
   &.is-opened &__icon {
