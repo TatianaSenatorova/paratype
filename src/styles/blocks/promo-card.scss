@@ -107,15 +107,10 @@
     text-transform: uppercase;
   }
 
-  &__special-offer {
+  &__badge {
     position: absolute;
     top: var(--offer-space);
     right: var(--offer-space);
-    display: grid;
-    place-items: center;
-    width: 40px;
-    height: 40px;
-    margin: 0;
     border-radius: 50%;
     background-color: $color-sunset-oranget;
     color: $color-white;
@@ -157,7 +152,7 @@
       justify-self: center;
     }
 
-    &__special-offer {
+    &__badge {
       @include fluid(width, 25, 45, 768, 1600);
       @include fluid(height, 25, 45, 768, 1600);
     }
