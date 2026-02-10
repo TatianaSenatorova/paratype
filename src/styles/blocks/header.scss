@@ -50,7 +50,6 @@
     @include fluid(padding-left, 10, 15, 320, 390);
 
     justify-content: space-between;
-    overflow: hidden;
   }
 
   &__bar::before,
@@ -84,7 +83,6 @@
     align-items: center;
     margin-left: auto;
     min-width: 0;
-
     max-width: 100%;
     flex-wrap: nowrap;
     overflow-x: auto;
@@ -163,6 +161,7 @@
       align-items: center;
       flex: 1 1 auto;
       z-index: unset;
+      background-color: unset;
     }
 
     &__controls {

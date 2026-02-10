@@ -1,14 +1,8 @@
 @use '../global' as *;
 
 .user-menu {
-  // min-width: 0;
-  // max-width: 100%;
   display: flex;
   flex-wrap: nowrap;
-  // overflow-x: auto;
-  // -webkit-overflow-scrolling: touch;
-  // overscroll-behavior-x: contain;
-  // touch-action: pan-x;
   padding: 0;
   list-style: none;
 
@@ -41,7 +35,20 @@
   }
 
   @include vp-1024 {
-    justify-content: flex-end;
+    margin-left: auto;
+    min-width: 0;
+    max-width: 100%;
+    flex: 1 1 auto;
+    flex-wrap: nowrap;
+    -webkit-overflow-scrolling: touch;
+    overscroll-behavior-x: contain;
+    touch-action: pan-x;
+    overflow-x: auto;
+    scrollbar-width: thin;
+
+    &__item:first-child {
+      margin-left: auto;
+    }
 
     &__item:nth-child(1) .user-menu__link {
       border-left: unset;
