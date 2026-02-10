@@ -111,12 +111,9 @@
     position: absolute;
     top: var(--offer-space);
     right: var(--offer-space);
-    border-radius: 50%;
-    background-color: $color-sunset-oranget;
-    color: $color-white;
-    font-weight: 600;
-    font-size: 12px;
-    line-height: 1;
+    margin: 0;
+    width: 40px;
+    min-height: 40px;
   }
 
   @include vp-390 {

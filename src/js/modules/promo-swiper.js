@@ -11,7 +11,6 @@ export const initPromoSwiper = () => {
 
   const isTablet = () => window.innerWidth >= 768;
 
-  // --- ENABLE SWIPER (mobile) ---
   const enable = () => {
     if (promoSwiper) return;
 
@@ -34,23 +33,16 @@ export const initPromoSwiper = () => {
     promoSwiper.init();
   };
 
-  // --- DESTROY SWIPER (tablet+) ---
   const destroy = () => {
     if (!promoSwiper) return;
-    console.log('DESTROY: swiper уже null');
     promoSwiper.destroy(true, true);
     promoSwiper = null;
-
-    // УДАЛЯЕМ inline стили swiper (очень важно)
     const wrapper = root.querySelector('.swiper-wrapper');
     const slides = root.querySelectorAll('.swiper-slide');
-
     wrapper?.removeAttribute('style');
     slides.forEach((el) => el.removeAttribute('style'));
-    console.log('DESTROY: завершён');
   };
 
-  // --- BREAKPOINT CHECK ---
   const check = () => {
     if (isTablet()) {
       destroy();
@@ -59,9 +51,7 @@ export const initPromoSwiper = () => {
     }
   };
 
-  // Первый запуск
   check();
 
-  // resize — единственный надёжный способ
   window.addEventListener('resize', check);
 };

@@ -1,0 +1,13 @@
+@use '../global' as *;
+
+.catalog-section {
+  padding-bottom: 20px;
+
+  @include vp-1024 {
+    padding-bottom: 30px;
+  }
+
+  &__catalog {
+    width: 100%;
+  }
+}
