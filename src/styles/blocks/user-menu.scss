@@ -11,7 +11,7 @@
   }
 
   &__item:not(:first-child) {
-    border-left: 1px solid $color-whisper;
+    box-shadow: inset 1px 0 0 $color-whisper;
   }
 
   &__link {
@@ -45,6 +45,10 @@
     touch-action: pan-x;
     overflow-x: auto;
     scrollbar-width: thin;
+
+    &__item {
+      max-width: unset;
+    }
 
     &__item:first-child {
       margin-left: auto;

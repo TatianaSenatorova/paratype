@@ -23,22 +23,23 @@
     @include fluid(width, 30, 40, 320, 390);
     @include fluid(height, 25, 33, 320, 390);
 
-    transition: opacity 0.3s;
+    transition: color 0.3s;
     color: inherit;
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
         outline: none;
-        opacity: 0.5;
+        color: $color-sunset-oranget;
       }
     }
 
     &:focus-visible {
-      opacity: 0.5;
+      color: $color-sunset-oranget;
     }
 
     &:active {
-      opacity: 0.3;
+      color: $color-sunset-oranget;
+      opacity: 0.6;
     }
   }
 

@@ -46,7 +46,6 @@
     display: flex;
     align-items: center;
 
-    @include fluid(gap, 4, 15, 320, 390);
     @include fluid(padding-left, 10, 15, 320, 390);
 
     justify-content: space-between;
@@ -81,7 +80,6 @@
   &__controls {
     display: flex;
     align-items: center;
-    margin-left: auto;
     min-width: 0;
     max-width: 100%;
     flex-wrap: nowrap;

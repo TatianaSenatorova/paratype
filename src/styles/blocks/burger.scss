@@ -16,8 +16,9 @@
   border: none;
   padding: 5px;
   background-color: $color-transparent;
-  border-left: 1px solid $color-whisper;
-  border-right: 1px solid $color-whisper;
+  box-shadow:
+    inset 1px 0 0 $color-whisper,
+    inset -1px 0 0 $color-whisper;
   cursor: pointer;
   transition:
     background-color $trans-default,
@@ -77,8 +78,9 @@
 
   &.is-opened {
     background: $color-sunset-oranget;
-    border-left-color: $color-sunset-oranget;
-    border-right-color: $color-sunset-oranget;
+    box-shadow:
+      inset 1px 0 0 $color-sunset-oranget,
+      inset -1px 0 0 $color-sunset-oranget;
   }
 
   &.is-opened &__icon {

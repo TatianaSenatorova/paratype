@@ -4,13 +4,13 @@
   @include header-icon-item;
   @include header-icon-states;
 
-  border-right: 1px solid $color-whisper;
+  box-shadow: inset -1px 0 0 $color-whisper;
 
   @include vp-1024 {
     height: 100%;
     padding: 10px 10px 10px 36px;
     border-right: unset;
-    border-left: 1px solid $color-whisper;
+    box-shadow: inset 1px 0 0 $color-whisper;
   }
 
   &__svg {
