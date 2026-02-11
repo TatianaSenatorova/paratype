@@ -1,23 +1,19 @@
 @use '../global' as *;
 
 .catalog {
-  width: 100%;
+  overflow: hidden;
 
-  &__wrapper {
-    display: flex;
-    gap: 10px;
-  }
-
-  &__item {
-    flex-shrink: 0;
-    width: 86px;
-    min-height: 98px;
+  &__item.swiper-slide {
+    flex: 0 0 auto;
+    width: 105px;
+    min-height: 120px;
+     display: grid;
   }
 
   @include vp-768 {
     &__wrapper {
       display: grid;
-      grid-template-columns: repeat(8, 1fr);
+      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
       gap: 20px;
     }
 

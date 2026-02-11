@@ -8,9 +8,9 @@
   grid-template-rows: 47px 1fr;
   place-items: center;
   width: 100%;
-  height: 100%;
+  min-height: 100%;
   padding: 20px 5px 7px;
-  background: $color-gray-light;
+  background-color: $color-whisper;
   border-radius: 10px;
   color: inherit;
   text-decoration: none;
@@ -30,7 +30,6 @@
 
   &__count {
     display: none;
-    margin: 0;
   }
 
   &__image-wrapper {
@@ -39,6 +38,7 @@
   }
 
   &__image-wrapper img {
+    display: block;
     width: 100%;
     height: 100%;
     object-fit: contain;
@@ -57,8 +57,8 @@
     position: absolute;
     top: var(--badge-offset);
     right: var(--badge-offset);
-    width: 22px;
-    height: 22px;
+    width: 20px;
+    height: 20px;
   }
 
   @include vp-768 {
