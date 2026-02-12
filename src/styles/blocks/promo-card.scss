@@ -5,7 +5,6 @@
   --slogan-color: #{$color-sunset-oranget};
   --offer-space: 8px;
 
-  box-sizing: border-box;
   position: relative;
   display: grid;
   aspect-ratio: 370 / 300;
@@ -16,6 +15,22 @@
   border-radius: 10px;
   text-decoration: none;
   transition: opacity $trans-default;
+  transform: translateZ(0);
+  overflow: hidden;
+
+  &::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    z-index: 0;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    transform: var(--img-transform);
+    transition: transform $trans-default;
+    will-change: transform;
+    border-radius: inherit;
+  }
 
   &:focus-visible,
   &:hover {
@@ -34,23 +49,28 @@
     color: $color-whisper;
   }
 
-  &__image-wrapper {
-    position: absolute;
-    inset: 0;
-    width: 100%;
-    height: 100%;
-    margin: auto;
-    overflow: hidden;
-    border-radius: 10px;
+  &--dark::before {
+    background-image: url('/images/promo/promo-sale-mobile@1x.jpg');
+    background-image: image-set(
+      url('/images/promo/promo-sale-mobile@1x.webp') type('image/webp') 1x,
+      url('/images/promo/promo-sale-mobile@2x.webp') type('image/webp') 2x,
+      url('/images/promo/promo-sale-mobile@1x.jpg') type('image/jpeg') 1x,
+      url('/images/promo/promo-sale-mobile@2x.jpg') type('image/jpeg') 2x
+    );
   }
 
-  & img {
-    display: block;
-    object-fit: cover;
-    width: 100%;
-    height: 100%;
-    transform: var(--img-transform);
-    transition: transform 0.5s;
+  &--pragmatica-next {
+    background-color: $color-melon;
+  }
+
+  &--pragmatica-next::before {
+    background-image: url('/images/promo/promo-collection-mobile@1x.jpg');
+    background-image: image-set(
+      url('/images/promo/promo-collection-mobile@1x.webp') type('image/webp') 1x,
+      url('/images/promo/promo-collection-mobile@2x.webp') type('image/webp') 2x,
+      url('/images/promo/promo-collection-mobile@1x.jpg') type('image/jpeg') 1x,
+      url('/images/promo/promo-collection-mobile@2x.jpg') type('image/jpeg') 2x
+    );
   }
 
   &__content {
@@ -74,10 +94,6 @@
     text-align: center;
     color: var(--slogan-color);
     transition: color $trans-default;
-  }
-
-  &--pragmatica-next {
-    background-color: $color-melon;
   }
 
   &--pragmatica-next .promo-card__slogan {
@@ -130,6 +146,26 @@
     aspect-ratio: 760 / 440;
     padding: 21px 20px 31px;
 
+    &--dark::before {
+      background-image: url('/images/promo/promo-sale-tablet@1x.jpg');
+      background-image: image-set(
+        url('/images/promo/promo-sale-tablet@1x.webp') type('image/webp') 1x,
+        url('/images/promo/promo-sale-tablet@2x.webp') type('image/webp') 2x,
+        url('/images/promo/promo-sale-tablet@1x.jpg') type('image/jpeg') 1x,
+        url('/images/promo/promo-sale-tablet@2x.jpg') type('image/jpeg') 2x
+      );
+    }
+
+    &--pragmatica-next::before {
+      background-image: url('/images/promo/promo-collection-tablet@1x.jpg');
+      background-image: image-set(
+        url('/images/promo/promo-collection-tablet@1x.webp') type('image/webp') 1x,
+        url('/images/promo/promo-collection-tablet@2x.webp') type('image/webp') 2x,
+        url('/images/promo/promo-collection-tablet@1x.jpg') type('image/jpeg') 1x,
+        url('/images/promo/promo-collection-tablet@2x.jpg') type('image/jpeg') 2x
+      );
+    }
+
     &__slogan {
       @include fluid(font-size, 48, 60, 768, 1600);
     }
@@ -151,7 +187,7 @@
 
     &__badge {
       @include fluid(width, 25, 45, 768, 1600);
-      @include fluid(height, 25, 45, 768, 1600);
+      @include fluid(min-height, 25, 45, 768, 1600);
     }
   }
 }

@@ -66,6 +66,16 @@
       font-size: 14px;
       text-transform: uppercase;
       color: inherit;
+      transition: color $trans-default;
+    }
+
+    @include vp-1024 {
+      .user-menu__link:hover .user-menu__text,
+      .user-menu__link:hover .user-menu__count,
+      .user-menu__link:focus-visible .user-menu__text,
+      .user-menu__link:focus-visible .user-menu__count {
+        color: $color-sunset-oranget;
+      }
     }
   }
 }

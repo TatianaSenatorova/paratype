@@ -7,19 +7,30 @@
     flex: 0 0 auto;
     width: 105px;
     min-height: 120px;
-     display: grid;
+    display: grid;
   }
 
   @include vp-768 {
-    &__wrapper {
+    &__wrapper.swiper-wrapper {
       display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(175px, 1fr));
-      gap: 20px;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 10px;
     }
 
-    &__item {
-      width: 100%;
-      min-height: 200px;
+    &__item.swiper-slide {
+      width: unset;
+      min-height: unset;
+      aspect-ratio: 175 / 170;
+    }
+  }
+
+  @include vp-1024 {
+    &__wrapper.swiper-wrapper {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    &__item.swiper-slide {
+      aspect-ratio: 175 / 200;
     }
   }
 }

@@ -66,6 +66,9 @@
 
 @mixin header-icon-item {
   color: inherit;
+
+  --icon-color: currentColor;
+
   text-decoration: none;
   cursor: pointer;
   display: flex;
@@ -101,6 +104,10 @@
   width: 20px;
   height: 20px;
   flex-shrink: 0;
+  color: var(--icon-color);
+  transition:
+    fill $trans-default,
+    stroke $trans-default;
 
   @include vp-1024 {
     width: 24px;
@@ -118,11 +125,42 @@
   }
 
   &:focus-visible {
-    color: $color-sunset-oranget;
+    --icon-color: #{$color-white};
+
+    outline: none;
+    background-color: $color-sunset-oranget;
   }
 
   @media (hover: hover) and (pointer: fine) {
     &:hover {
+      --icon-color: #{$color-white};
+
+      outline: none;
+      background-color: $color-sunset-oranget;
+    }
+  }
+
+  @include vp-1024 {
+    &:focus-visible {
+      --icon-color: #{$color-sunset-oranget};
+
+      outline: none;
+      background-color: unset;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        --icon-color: #{$color-sunset-oranget};
+
+        outline: none;
+        background-color: unset;
+      }
+    }
+
+    &__link:hover &__text,
+    &__link:hover &__count,
+    &__link:focus-visible &__text,
+    &__link:focus-visible &__count {
       color: $color-sunset-oranget;
     }
   }

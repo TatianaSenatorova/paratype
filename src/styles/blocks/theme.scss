@@ -13,18 +13,16 @@
     background-color: $color-gray-light;
     border-radius: 999px;
     border: none;
+    outline: 2px solid transparent;
+    outline-offset: 1px;
+    transition: outline-color $trans-default;
     cursor: pointer;
-    transition: opacity $trans-default;
 
     @include tap-reset;
 
-    &:focus {
-      outline: none;
-    }
-
+ 
     &:focus-visible {
       outline: 2px solid $color-sunset-oranget;
-      outline-offset: 2px;
     }
 
     &:active {
@@ -33,7 +31,7 @@
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {
-        opacity: 0.95;
+        outline-color: rgba($color-sunset-oranget, 0.9);
       }
     }
 
@@ -44,12 +42,16 @@
       width: 50%;
       background-color: $color-sunset-oranget;
       border-radius: 999px;
-      transition: transform 0.3s ease;
+      transform: translateX(0) scale(1);
+      transition:
+        transform 0.25s ease,
+        filter 0.25s ease;
+      filter: saturate(1);
       z-index: 0;
     }
 
     &.theme__toggle--dark::before {
-      transform: translateX(100%);
+      transform: translateX(100%) scale(1);
     }
 
     &:not(.theme__toggle--dark) .theme__label--light {
