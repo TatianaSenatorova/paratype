@@ -6,31 +6,37 @@
   &__item.swiper-slide {
     flex: 0 0 auto;
     width: 105px;
+    height: auto;
     min-height: 120px;
     display: grid;
   }
 
   @include vp-768 {
+    overflow: visible;
+
     &__wrapper.swiper-wrapper {
       display: grid;
       grid-template-columns: repeat(4, 1fr);
-      gap: 10px;
+      gap: 20px 10px;
     }
 
     &__item.swiper-slide {
-      width: unset;
-      min-height: unset;
-      aspect-ratio: 175 / 170;
+      @include fluid(width, 174, 220, 768, 1024);
+      @include fluid(min-height, 130, 150, 768, 1024);
     }
   }
 
   @include vp-1024 {
     &__wrapper.swiper-wrapper {
       grid-template-columns: repeat(8, 1fr);
+
+      @include fluid(column-gap, 10, 20, 1024, 1600);
     }
 
     &__item.swiper-slide {
-      aspect-ratio: 175 / 200;
+      width: 100%;
+
+      @include fluid(min-height, 130, 200, 1024, 1600);
     }
   }
 }

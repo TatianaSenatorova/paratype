@@ -10,6 +10,7 @@ import { initThemeToggle } from './modules/theme.js';
 import { setHeaderHeight } from './modules/set-header-height.js';
 import { initPromoSwiper } from './modules/promo-swiper.js';
 import { initCatalogSwiper } from './modules/catalog-swiper.js';
+import { initBadgeFormatter } from './modules/badge-formatter.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
@@ -17,6 +18,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initThemeToggle();
   setHeaderHeight();
   initPromoSwiper();
+  initBadgeFormatter();
   initCatalogSwiper();
 });
 
