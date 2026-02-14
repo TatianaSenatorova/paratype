@@ -176,6 +176,7 @@
       align-items: center;
       gap: 20px;
       min-height: 60px;
+      padding: 0 10px;
     }
 
     &__offer {
@@ -183,7 +184,7 @@
     }
 
     &__offer-text--accent {
-      margin-right: 21px;
+      margin-right: 18px;
     }
 
     &__user-menu {
@@ -201,7 +202,7 @@
 
     &__theme {
       margin: 0;
-      padding: 0 35px;
+     
     }
   }
 }

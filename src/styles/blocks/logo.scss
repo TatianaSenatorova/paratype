@@ -63,30 +63,44 @@
   }
 
   @include vp-1024 {
-    @include fluid(width, 125, 390, 1024, 1600);
+    @include fluid(width, 125, 400, 1024, 1600);
 
+    min-width: 0;
+    max-width: 400px;
     justify-content: flex-start;
-    padding: unset;
+    padding: 0 10px;
 
     &__image {
       @include fluid(width, 115, 230, 1024, 1600);
       @include fluid(height, 30, 60, 1024, 1600);
     }
+
+    &__svg--desktop {
+      display: block;
+    }
+
+    &__svg--mobile {
+      display: none;
+    }
   }
 
   @include vp-1280 {
     position: relative;
+    flex-direction: column;
+    padding: 20px 20px 0 10px;
 
     &__text {
-      position: absolute;
-      top: 20px;
-      right: 19px;
       display: block;
       margin: 0;
-      align-self: flex-start;
+      align-self: flex-end;
       font-weight: 500;
       font-size: 12px;
+      line-height: 0.9;
       letter-spacing: 0.01em;
+    }
+
+    &__image {
+      align-self: flex-start;
     }
   }
 }

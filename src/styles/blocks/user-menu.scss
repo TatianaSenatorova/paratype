@@ -67,15 +67,31 @@
       text-transform: uppercase;
       color: inherit;
       transition: color $trans-default;
+      line-height: 1;
     }
 
-    @include vp-1024 {
-      .user-menu__link:hover .user-menu__text,
-      .user-menu__link:hover .user-menu__count,
-      .user-menu__link:focus-visible .user-menu__text,
-      .user-menu__link:focus-visible .user-menu__count {
-        color: $color-sunset-oranget;
-      }
+    &__count {
+      font-size: 14px;
+    }
+
+    &__text {
+      font-size: 12px;
+    }
+
+    &__link--account {
+      padding: 5px 22px 5px 21px;
+    }
+
+    &__link--favorite,
+    &__link--basket {
+      padding: 5px 26px;
+    }
+
+    &__link:hover &__text,
+    &__link:hover &__count,
+    &__link:focus-visible &__text,
+    &__link:focus-visible &__count {
+      color: $color-sunset-oranget;
     }
   }
 }
