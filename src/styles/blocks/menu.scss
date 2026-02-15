@@ -213,11 +213,10 @@
 
     &__link--current {
       position: relative;
-      background: $color-sunset-oranget;
-      color: $color-white;
-      border-radius: 999px;
       display: grid;
       place-items: center;
+
+      @include pill-current;
     }
 
     &__link--current::after {

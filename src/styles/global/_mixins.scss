@@ -165,3 +165,12 @@
     }
   }
 }
+
+@mixin pill-current(
+  $bg: $color-sunset-oranget,
+  $color: $color-white
+) {
+  background: $bg;
+  color: $color;
+  border-radius: 999px;
+}

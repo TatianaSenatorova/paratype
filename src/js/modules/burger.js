@@ -27,6 +27,10 @@ const initBurgerMenu = () => {
     burger.classList.add('is-opened');
     burger.setAttribute('aria-expanded', 'true');
     setHeaderHeight();
+
+    const firstFocusable = menu.querySelector('a, button, [tabindex]:not([tabindex="-1"])');
+    firstFocusable?.focus();
+
     document.addEventListener('keydown', onDocumentKeydown);
     document.addEventListener('click', onDocumentClick);
   };
@@ -36,6 +40,7 @@ const initBurgerMenu = () => {
     burger.classList.remove('is-opened');
     burger.setAttribute('aria-expanded', 'false');
     setHeaderHeight();
+    burger.focus();
     document.removeEventListener('keydown', onDocumentKeydown);
     document.removeEventListener('click', onDocumentClick);
   };

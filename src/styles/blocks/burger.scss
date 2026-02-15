@@ -79,8 +79,7 @@
   &.is-opened {
     background: $color-sunset-oranget;
     box-shadow:
-      inset 1px 0 0 $color-sunset-oranget,
-      inset -1px 0 0 $color-sunset-oranget;
+    inset -1px 0 0 $color-whisper;
   }
 
   &.is-opened &__icon {

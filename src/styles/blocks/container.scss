@@ -21,4 +21,8 @@
   &--fluid {
     padding: 0;
   }
+
+  &--wider-on-desktop {
+    padding: 0 $container-padding-mobile;
+  }
 }
