@@ -321,47 +321,61 @@
       <section class="showcase">
         <div class="container container--wider-on-desktop">
           <h2 class="visually-hidden">Лучшие предложения.</h2>
-
           <div class="showcase__controls">
-            <div class="showcase__filter filter">
-              <button class="filter__filter-button filter-button" type="button" aria-label="Открыть список категорий.">
+            <div class="showcase__filter filter" data-filter>
+              <button
+                class="filter__filter-button filter-button"
+                type="button"
+                aria-label="Открыть список категорий."
+                data-filter-button>
+                Все новинки
                 <span class="visually-hidden">Выбрать категорию.</span>
               </button>
 
-              <ul class="filter__list">
+              <ul class="filter__list" data-filter-list>
                 <li class="filter__item">
                   <button
                     class="filter__filter-button filter-button filter-button--current"
                     type="button"
-                    data-value="news">
+                    data-value="news"
+                    data-filter-option>
                     Все новинки
                   </button>
                 </li>
                 <li class="filter__item">
-                  <button class="filter__filter-button filter-button" type="button" data-value="sale">
+                  <button
+                    class="filter__filter-button filter-button"
+                    type="button"
+                    data-value="sale"
+                    data-filter-option>
                     Распродажа
                   </button>
                 </li>
                 <li class="filter__item">
-                  <button class="filter__filter-button filter-button" type="button" data-value="recommend">
+                  <button
+                    class="filter__filter-button filter-button"
+                    type="button"
+                    data-value="recommend"
+                    data-filter-option>
                     Рекомендуем
                   </button>
                 </li>
                 <li class="filter__item">
-                  <button class="filter__filter-button filter-button" type="button" data-value="hit">
+                  <button class="filter__filter-button filter-button" type="button" data-value="hit" data-filter-option>
                     Бестселлеры
                   </button>
                 </li>
               </ul>
             </div>
 
-            <div class="showcase__view">
+            <div class="showcase__view" data-showcase-view>
               <button
                 class="showcase__view-button view-button view-button--cards showcase__view-button--active"
-                type="button">
+                type="button"
+                data-showcase-view-btn>
                 <span class="visually-hidden">Включить отображение карточками.</span>
               </button>
-              <button class="showcase__view-button view-button view-button--list" type="button">
+              <button class="showcase__view-button view-button view-button--list" type="button" data-showcase-view-btn>
                 <span class="visually-hidden">Включить отображение списком.</span>
               </button>
             </div>
@@ -370,7 +384,7 @@
           <ul class="showcase__list">
             <!-- BIG CARD -->
             <li class="showcase__item showcase__item--big">
-              <article class="showcase__card showcase-card showcase-card--big showcase-card--first">
+              <article class="showcase__card showcase-card showcase-card--big showcase-card--first" data-showcase-card>
                 <a class="showcase-card__link" href="#" aria-label="Открыть шрифт Pragmatica Next VF"></a>
                 <div class="showcase-card__content-wrapper">
                   <div class="showcase-card__content">
@@ -378,7 +392,7 @@
                       Распродажа <span class="showcase-card__status-accent">30%</span>
                     </p>
                     <h3 class="showcase-card__title">Pragmatica <br />Next VF</h3>
-                    <div class="showcase-card__details">
+                    <div class="showcase-card__details" data-showcase-details>
                       <div class="showcase-card__description">
                         <dl class="showcase-card__specs">
                           <div class="showcase-card__spec">
@@ -421,7 +435,8 @@
                   <button
                     class="showcase-card__button-open button-accordeon"
                     type="button"
-                    aria-label="Открыть подробное описание">
+                    aria-label="Открыть подробное описание"
+                    data-button-accordeon>
                     <span class="visually-hidden">Открыть подробное описание.</span>
                   </button>
                 </div>
@@ -549,13 +564,13 @@
               </article>
             </li>
             <li class="showcase__item">
-              <article class="showcase__card showcase-card showcase-card--first">
+              <article class="showcase__card showcase-card showcase-card--first" data-showcase-card>
                 <a class="showcase-card__link" href="#" aria-label="Открыть шрифт Proxima Nova"></a>
                 <div class="showcase-card__content-wrapper">
                   <div class="showcase-card__content">
                     <p class="showcase-card__status">Бестселлер</p>
                     <h3 class="showcase-card__title">Proxima Nova</h3>
-                    <div class="showcase-card__details">
+                    <div class="showcase-card__details" data-showcase-details>
                       <div class="showcase-card__description">
                         <dl class="showcase-card__specs">
                           <div class="showcase-card__spec">
@@ -598,7 +613,8 @@
                   <button
                     class="showcase-card__button-open button-accordeon"
                     type="button"
-                    aria-label="Открыть подробное описание">
+                    aria-label="Открыть подробное описание"
+                    data-button-accordeon>
                     <span class="visually-hidden">Открыть подробное описание.</span>
                   </button>
                 </div>
@@ -726,13 +742,15 @@
               </article>
             </li>
             <li class="showcase__item">
-              <article class="showcase__card showcase-card showcase-card--first showcase-card--magistral">
+              <article
+                class="showcase__card showcase-card showcase-card--first showcase-card--magistral"
+                data-showcase-card>
                 <a class="showcase-card__link" href="#" aria-label="Открыть шрифт Magistral PT"></a>
                 <div class="showcase-card__content-wrapper">
                   <div class="showcase-card__content">
                     <p class="showcase-card__status">Рекомендуем</p>
                     <h3 class="showcase-card__title">Magistral <br />PT</h3>
-                    <div class="showcase-card__details showcase-card__details--opened">
+                    <div class="showcase-card__details showcase-card__details--opened" data-showcase-details>
                       <div class="showcase-card__description">
                         <dl class="showcase-card__specs">
                           <div class="showcase-card__spec">
@@ -775,7 +793,8 @@
                   <button
                     class="showcase-card__button-open button-accordeon button-accordeon--active"
                     type="button"
-                    aria-label="Открыть подробное описание">
+                    aria-label="Открыть подробное описание"
+                    data-button-accordeon>
                     <span class="visually-hidden">Открыть подробное описание.</span>
                   </button>
                 </div>
