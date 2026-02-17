@@ -33,9 +33,8 @@
 
   &:focus-visible {
     outline: none;
-    transform: translateY(-2px);
     background-color: $color-hint-of-red;
-    box-shadow: 0 0 0 3px rgba($color-sunset-orange, 0.6);
+    box-shadow: inset 0 0 0 2px rgba($color-sunset-orange, 0.8);
   }
 
   &:active {

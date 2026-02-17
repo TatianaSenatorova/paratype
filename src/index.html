@@ -324,7 +324,7 @@
           <div class="showcase__controls">
             <div class="showcase__filter filter" data-filter>
               <button
-                class="filter__filter-button filter-button"
+                class="filter__filter-button filter-button filter-button--trigger"
                 type="button"
                 aria-label="Открыть список категорий."
                 data-filter-button>
@@ -370,19 +370,23 @@
 
             <div class="showcase__view" data-showcase-view>
               <button
-                class="showcase__view-button view-button view-button--cards showcase__view-button--active"
+                class="showcase__view-button view-button view-button--cards showcase__view-button is-active"
                 type="button"
                 data-showcase-view-btn>
+                <svg class="view-button__icon" width="20" height="20" aria-hidden="true">
+                  <use href="/images/sprite/stack.svg#view-cards"></use>
+                </svg>
                 <span class="visually-hidden">Включить отображение карточками.</span>
               </button>
               <button class="showcase__view-button view-button view-button--list" type="button" data-showcase-view-btn>
+                <svg class="view-button__icon" width="20" height="20" aria-hidden="true">
+                  <use href="/images/sprite/stack.svg#view-list"></use>
+                </svg>
                 <span class="visually-hidden">Включить отображение списком.</span>
               </button>
             </div>
           </div>
-
           <ul class="showcase__list">
-            <!-- BIG CARD -->
             <li class="showcase__item showcase__item--big">
               <article class="showcase__card showcase-card showcase-card--big showcase-card--first" data-showcase-card>
                 <a class="showcase-card__link" href="#" aria-label="Открыть шрифт Pragmatica Next VF"></a>

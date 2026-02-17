@@ -25,7 +25,7 @@
     position: relative;
     border-radius: 10px;
     background-color: $color-white;
-    z-index: 10;
+    z-index: $z-index-first;
   }
 
   &__content {

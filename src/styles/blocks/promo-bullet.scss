@@ -1,35 +1,47 @@
 @use '../global' as *;
 
 .promo-bullet {
+  position: relative;
+  z-index: $z-index-second;
   display: grid;
   place-items: center;
-  box-sizing: border-box;
   padding: 0;
 
   @include fluid(width, 6, 10, 390, 1023);
   @include fluid(height, 6, 10, 390, 1023);
 
-  background-color: $color-nobel;
-  background-image: radial-gradient($color-white 35%, $color-transparent 35%);
-  border: 1px solid $color-white;
   border-radius: 50%;
-  transition:
-    background-color $trans-default,
-    border $trans-default,
-    opacity $trans-default;
-  z-index: $z-index-second;
+  background-color: $color-nobel;
+  background-image: radial-gradient($color-white 35%, transparent 35%);
+  border: 1px solid $color-white;
   cursor: pointer;
+  transition: transform $trans-default;
 
   @include tap-reset;
 
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      transform: scale(1.08);
+    }
+  }
+
   &:focus-visible {
     outline: none;
-    background-color: $color-sunset-oranget;
+  }
+
+  &:focus-visible::after {
+    content: '';
+    position: absolute;
+    inset: -2px;
+    border-radius: 50%;
+    box-shadow:
+      0 0 0 2px $color-sunset-oranget,
+      0 0 0 4px rgba($color-white, 0.9);
+    pointer-events: none;
   }
 
   &:active {
-    background-color: $color-nobel;
-    background-image: radial-gradient($color-sunset-oranget 1px, $color-transparent 1px);
+    transform: scale(0.92);
   }
 
   &:disabled {
@@ -42,22 +54,15 @@
   }
 
   &::before {
-    width: 12px;
-    height: 12px;
     content: '';
-    background-color: $color-transparent;
-    border-radius: 50%;
-    z-index: -1;
+    position: absolute;
+    inset: -8px -4px;
+    border-radius: 999px;
   }
 
   &--active {
     background-color: $color-sunset-oranget;
     background-image: none;
     border: 1px solid $color-sunset-oranget;
-
-    &:focus-visible,
-    &:hover {
-      opacity: 0.7;
-    }
   }
 }

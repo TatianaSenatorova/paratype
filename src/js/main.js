@@ -11,6 +11,7 @@ import { setHeaderHeight } from './modules/set-header-height.js';
 import { initPromoSwiper } from './modules/promo-swiper.js';
 import { initCatalogSwiper } from './modules/catalog-swiper.js';
 import { initBadgeFormatter } from './modules/badge-formatter.js';
+import { initFilter } from './modules/filter.js';
 import { initShowcaseView } from './modules/toggle-view.js';
 import { initShowcaseAccordion } from './modules/showcase-accordion.js';
 import { initShowcaseHoverDetails } from './modules/hover-accordion.js';
@@ -25,6 +26,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initPromoSwiper();
   initBadgeFormatter();
   initCatalogSwiper();
+  initFilter();
   initShowcaseView();
   initShowcaseAccordion();
   initShowcaseHoverDetails();

@@ -1,133 +1,78 @@
 @use '../global' as *;
 
-.filter-button {
-  --transform: translate(-50%, -50%) scale(0.6);
-  --opacity: 0;
-  --bg-color: #{$color-sunset-oranget};
-
+.view-button {
   position: relative;
-  display: block;
-  width: 100%;
-  padding: 24px 44px 16px 20px;
-  font-family: inherit;
-  font-weight: 600;
-  font-size: 12px;
-  text-transform: uppercase;
-  line-height: 1;
-  border-radius: 10px 0 0 10px;
-  border-right: 1px solid $color-whisper;
+  z-index: 2;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  margin: auto 0;
+  padding: 0;
   border: none;
-  background-color: $color-white;
+  background: none;
+  color: $color-nero;
+  cursor: pointer;
   transition:
     color $trans-default,
-    background-color $trans-default,
     opacity $trans-default;
-  cursor: pointer;
 
   @include tap-reset;
 
+  &::before {
+    content: '';
+    position: absolute;
+    inset: -10px;
+    pointer-events: none;
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-sunset-orange;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $color-sunset-orange;
+    }
+  }
+
+  // &:active {
+  //   opacity: 0.6;
+  // }
+
   &:disabled {
     color: $color-nobel;
-    background-color: $color-white-smoke;
     pointer-events: none;
     cursor: default;
   }
 
-  &::after {
-    content: '';
-    position: absolute;
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%) scaleY(1);
-    transform-origin: center;
-    border: 5px solid transparent;
-    border-top: 5px solid $color-nero;
-    transition:
-      transform $trans-default,
-      border-color $trans-default,
-      opacity $trans-default;
-    pointer-events: none;
+  @include vp-1024 {
+    width: 24px;
+    height: 24px;
   }
 
-  &:active {
-    opacity: 0.8;
-  }
-}
+  &.is-active {
+    color: $color-sunset-orange;
 
-.filter--open .filter-button::after {
-  transform: translateY(-50%) scaleY(-1);
-}
+    &:focus-visible {
+      opacity: 0.8;
+    }
 
-@media (hover: hover) and (pointer: fine) {
-  .filter-button:hover,
-  .filter-button:focus-visible {
-    outline: none;
-    color: $color-sunset-oranget;
-  }
-}
-
-@include vp-1024 {
-  .filter-button {
-    height: 100%;
-    padding: 8px 15px 5px;
-    font-size: 14px;
-    background-color: $color-transparent;
-    text-align: center;
-    border-right: none;
-    border-radius: 0;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover {
+        opacity: 0.8;
+      }
+    }
   }
 
-  .filter-button::after {
-    content: none;
-  }
-
-  .filter-button::before,
-  .filter-button::after {
-    box-sizing: border-box;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: var(--transform);
-    content: '';
+  &__icon {
     width: 100%;
     height: 100%;
-    opacity: var(--opacity);
-    transition:
-      transform $trans-default,
-      opacity $trans-default,
-      background-color $trans-default;
-    z-index: -1;
-  }
-
-  .filter-button::before {
-    border: 6px solid $color-transparent;
-    border-image: linear-gradient(to bottom, $color-nero 0%, $color-nero 100%);
-  }
-
-  .filter-button::after {
-    background-color: var(--bg-color);
-    border-radius: 80px;
-  }
-
-  .filter-button:active {
-    opacity: 1;
-  }
-
-  .filter-button--current {
-    @include pill-current($color-sunset-oranget, $color-white);
-  }
-
-  @media (hover: hover) and (pointer: fine) {
-    .filter-button:hover,
-    .filter-button:focus-visible {
-      --transform: translate(-50%, -50%) scale(1);
-      --opacity: 1;
-      color: $color-white;
-    }
-
-    .filter-button--current:hover,
-    .filter-button--current:focus-visible {
-      --bg-color: #{$color-sunset-orange};
-    }
+    display: block;
+    flex: none;
+    color: currentColor;
+    pointer-events: none;
   }
 }

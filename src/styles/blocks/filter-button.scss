@@ -8,7 +8,6 @@
 
   position: relative;
   display: block;
-  width: 100%;
   padding: 24px 44px 16px 20px;
   font-family: inherit;
   font-weight: 600;
@@ -16,9 +15,7 @@
   text-transform: uppercase;
   line-height: 1;
   text-align: left;
-  border-radius: 10px 0 0 10px;
   border: none;
-  border-right: 1px solid $color-whisper;
   background-color: $color-white;
   transition:
     color $trans-default,
@@ -33,7 +30,23 @@
     cursor: default;
   }
 
-  &::after {
+  &:active {
+    opacity: 0.8;
+  }
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover,
+    &:focus-visible {
+      outline: none;
+      color: $color-sunset-oranget;
+    }
+  }
+
+  &--trigger {
+    border-radius: 10px 0 0 10px;
+  }
+
+  &--trigger::after {
     content: '';
     position: absolute;
     top: 50%;
@@ -49,9 +62,26 @@
     pointer-events: none;
   }
 
-  &::before,
-  &::after {
-    @include vp-1024 {
+  @include vp-1024 {
+    height: 100%;
+    padding: 8px 40px 5px 15px;
+    font-size: 14px;
+    background-color: $color-transparent;
+    text-align: center;
+
+    &:active {
+      opacity: 1;
+    }
+
+    &--current {
+      --transform: translate(-50%, -50%) scale(1);
+      --opacity: 1;
+
+      color: $color-white;
+    }
+
+    &::before,
+    &::after {
       box-sizing: border-box;
       position: absolute;
       top: 50%;
@@ -66,76 +96,34 @@
         background-color $trans-default;
       z-index: -1;
     }
-  }
 
-  &::before {
-    @include vp-1024 {
+    &::before {
       border: 6px solid $color-transparent;
       border-image: linear-gradient(to bottom, $color-nero 0%, $color-nero 100%);
     }
-  }
 
-  &::after {
-    @include vp-1024 {
+    &::after {
       background-color: var(--bg-color);
       border-radius: 80px;
     }
-  }
 
-  &:active {
-    opacity: 0.8;
+    @media (hover: hover) and (pointer: fine) {
+      &:hover,
+      &:focus-visible {
+        --transform: translate(-50%, -50%) scale(1);
+        --opacity: 1;
 
-    @include vp-1024 {
-      opacity: 1;
-    }
-  }
+        color: $color-white;
+      }
 
-  &--current {
-    @include vp-1024 {
-      --transform: translate(-50%, -50%) scale(1);
-      --opacity: 1;
-      color: $color-white;
+      &--current:hover,
+      &--current:focus-visible {
+        --bg-color: #{$color-sunset-orange};
+      }
     }
   }
 }
 
-/* --- переворот стрелки --- */
-
-.filter--open .filter-button::after {
+.filter--open .filter-button--trigger::after {
   transform: translateY(-50%) scaleY(-1);
-}
-
-/* --- hover только на non-touch --- */
-
-@media (hover: hover) and (pointer: fine) {
-  .filter-button:hover,
-  .filter-button:focus-visible {
-    outline: none;
-    color: $color-sunset-oranget;
-
-    @include vp-1024 {
-      --transform: translate(-50%, -50%) scale(1);
-      --opacity: 1;
-      color: $color-white;
-    }
-  }
-
-  .filter-button--current:hover,
-  .filter-button--current:focus-visible {
-    @include vp-1024 {
-      --bg-color: #{$color-sunset-orange};
-    }
-  }
-}
-
-/* --- media в конце --- */
-
-@include vp-1024 {
-  .filter-button {
-    height: 100%;
-    padding: 8px 40px 5px 15px;
-    font-size: 14px;
-    background-color: $color-transparent;
-    text-align: center;
-  }
 }
