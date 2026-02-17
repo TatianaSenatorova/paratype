@@ -16,7 +16,8 @@
   line-height: 1;
   text-align: left;
   border: none;
-  background-color: $color-white;
+  background-color: inherit;
+  color: inherit;
   transition:
     color $trans-default,
     background-color $trans-default,
@@ -44,6 +45,7 @@
 
   &--trigger {
     border-radius: 10px 0 0 10px;
+    border-right: 1px solid $color-whisper;
   }
 
   &--trigger::after {
@@ -54,12 +56,16 @@
     transform: translateY(-50%) scaleY(1);
     transform-origin: center;
     border: 5px solid transparent;
-    border-top: 5px solid $color-nero;
+    border-top: 5px solid currentColor;
     transition:
       transform $trans-default,
       border-color $trans-default,
       opacity $trans-default;
     pointer-events: none;
+  }
+
+  &--trigger:focus-visible {
+    outline: 2px solid $color-sunset-orange;
   }
 
   @include vp-1024 {
