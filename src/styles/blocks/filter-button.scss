@@ -16,7 +16,7 @@
   line-height: 1;
   text-align: left;
   border: none;
-  background-color: inherit;
+  background-color: var(--color-background);
   color: inherit;
   transition:
     color $trans-default,
@@ -35,10 +35,13 @@
     opacity: 0.8;
   }
 
+  &:focus-visible {
+    outline: none;
+    color: $color-sunset-oranget;
+  }
+
   @media (hover: hover) and (pointer: fine) {
-    &:hover,
-    &:focus-visible {
-      outline: none;
+    &:hover {
       color: $color-sunset-oranget;
     }
   }
@@ -66,6 +69,7 @@
 
   &--trigger:focus-visible {
     outline: 2px solid $color-sunset-orange;
+    color: inherit;
   }
 
   @include vp-1024 {

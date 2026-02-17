@@ -19,7 +19,7 @@
     list-style-type: none;
     border-radius: 10px;
     border: 1px solid $color-whisper;
-    background-color: $color-whisper;
+    background-color: var(--color-background);
     transform: scaleY(0);
     opacity: 0.7;
     transform-origin: top;
