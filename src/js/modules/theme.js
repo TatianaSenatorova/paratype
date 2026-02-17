@@ -1,4 +1,4 @@
-import { THEME_KEY} from '../constants';
+import { THEME_KEY } from '../constants';
 
 const initThemeToggle = () => {
   const theme = document.querySelector('[data-theme]');

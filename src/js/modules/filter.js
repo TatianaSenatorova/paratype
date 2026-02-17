@@ -24,7 +24,6 @@ export const initFilter = () => {
     setTabIndex(true);
   };
 
-  // старт — закрыт
   closeFilter();
 
   button.addEventListener('click', () => {
