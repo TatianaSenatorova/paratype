@@ -39,10 +39,6 @@
     }
   }
 
-  // &:active {
-  //   opacity: 0.6;
-  // }
-
   &:disabled {
     color: $color-nobel;
     pointer-events: none;
@@ -56,10 +52,6 @@
 
   &.is-active {
     color: $color-sunset-orange;
-
-    &:focus-visible {
-      opacity: 0.8;
-    }
 
     @media (hover: hover) and (pointer: fine) {
       &:hover {

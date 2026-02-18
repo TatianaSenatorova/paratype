@@ -17,6 +17,7 @@ import { initShowcaseAccordion } from './modules/showcase-accordion.js';
 import { initShowcaseHoverDetails } from './modules/hover-accordion.js';
 import { initShowcaseHoverPreview } from './modules/hover-preview.js';
 import { initShowcaseSwiper } from './modules/showcase-swiper.js';
+import { initFavorites } from './modules/favorites.js';
 
 document.addEventListener('DOMContentLoaded', () => {
   initBurgerMenu();
@@ -32,6 +33,7 @@ document.addEventListener('DOMContentLoaded', () => {
   initShowcaseHoverDetails();
   initShowcaseHoverPreview();
   initShowcaseSwiper();
+  initFavorites();
 });
 
 window.addEventListener('load', () => {});

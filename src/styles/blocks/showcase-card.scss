@@ -10,9 +10,9 @@
   color: $color-nero;
   border-radius: 10px;
 
-  &:focus-within,
-  &:hover {
-  }
+  // &:focus-within,
+  // &:hover {
+  // }
 
   &__link {
     position: absolute;
@@ -23,19 +23,24 @@
 
   &__content-wrapper {
     position: relative;
+    display: grid;
+    grid-template-columns: 1fr 40px;
+    column-gap: 10px;
     border-radius: 10px;
+    border: 1px solid $color-whisper;
     background-color: $color-white;
+    padding: 10px 10px 30px 20px;
     z-index: $z-index-first;
   }
 
   &__content {
     box-sizing: border-box;
     display: block;
-    padding: 19px 19px 29px;
-    border-radius: 10px;
-    border: 1px solid $color-whisper;
-    transition: border $trans-default, opacity $trans-default;
+    padding-top: 10px;
     color: inherit;
+    transition:
+      border $trans-default,
+      opacity $trans-default;
 
     &:focus-visible,
     &:hover {
@@ -66,14 +71,16 @@
     margin: 0 0 11px;
     font-size: 24px;
     color: inherit;
-    font-variation-settings: "wdth" 96;
+    font-variation-settings: 'wdth' 96;
   }
 
   &__details {
     grid-column: 1 / 3;
     max-height: 0;
     overflow: hidden;
-    transition: opacity $trans-400, max-height $trans-400;
+    transition:
+      opacity $trans-400,
+      max-height $trans-400;
     opacity: 0;
   }
 
@@ -142,11 +149,8 @@
     list-style-type: none;
   }
 
-  &__favorites {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    z-index: 3;
+  &__favorites-button {
+    align-self: flex-start;
   }
 
   &__button-open {
@@ -229,7 +233,10 @@
     border: 1px solid $color-white;
     border-radius: 50%;
     cursor: pointer;
-    transition: background-color $trans-default, border $trans-default, opacity $trans-default;
+    transition:
+      background-color $trans-default,
+      border $trans-default,
+      opacity $trans-default;
     background-image: radial-gradient($color-white 35%, $color-transparent 35%);
 
     &:focus-visible,
@@ -391,7 +398,7 @@
       position: absolute;
       top: 5px;
       left: 20px;
-      content: "";
+      content: '';
       width: calc((100% - 20px * 2) / 3);
       height: 4px;
       background-color: $color-sunset-oranget;

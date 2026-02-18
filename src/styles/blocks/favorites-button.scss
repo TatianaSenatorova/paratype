@@ -1,0 +1,56 @@
+@use '../global' as *;
+
+.favorites-button {
+  display: grid;
+  place-items: center;
+  padding: 10px;
+  border: none;
+  background: none;
+  color: inherit;
+  cursor: pointer;
+  transition: color $trans-default;
+
+  @include tap-reset;
+
+  @media (hover: hover) and (pointer: fine) {
+    &:hover {
+      color: $color-sunset-oranget;
+    }
+  }
+
+  &:focus-visible {
+    outline: none;
+    color: $color-sunset-oranget;
+  }
+
+  &:active {
+    opacity: 0.8;
+  }
+
+  &:disabled {
+    color: $color-white-smoke;
+    opacity: 1;
+    cursor: default;
+    pointer-events: none;
+  }
+
+  &.is-active,
+  &[aria-pressed='true'] {
+    color: $color-sunset-oranget;
+  }
+
+  &__icon {
+    width: 20px;
+    height: 20px;
+    display: block;
+    pointer-events: none;
+    color: currentColor;
+  }
+
+  @include vp-1024 {
+    &__icon {
+      width: 24px;
+      height: 24px;
+    }
+  }
+}
